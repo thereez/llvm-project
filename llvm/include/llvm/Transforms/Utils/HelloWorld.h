@@ -6,18 +6,23 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef LLVM_TRANSFORMS_UTILS_HELLOWORLD_H
-#define LLVM_TRANSFORMS_UTILS_HELLOWORLD_H
+#ifndef LLVM_TRANSFORMS_UTILS_HELLONEW_HELLOWORLD_H
+#define LLVM_TRANSFORMS_UTILS_HELLONEW_HELLOWORLD_H
 
 #include "llvm/IR/PassManager.h"
+#include "llvm/Analysis/LoopAnalysisManager.h"
+#include "llvm/ADT/Statistic.h"
+#include "llvm/Analysis/LoopInfo.h"
+#include "llvm/Transforms/Utils/LoopUtils.h"
 
 namespace llvm {
 
 class HelloWorldPass : public PassInfoMixin<HelloWorldPass> {
 public:
-  PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
+    PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
+    static bool isRequired() { return true; } 
 };
 
 } // namespace llvm
 
-#endif // LLVM_TRANSFORMS_UTILS_HELLOWORLD_H
+#endif // LLVM_TRANSFORMS_UTILS_HELLONEW_HELLOWORLD_H
