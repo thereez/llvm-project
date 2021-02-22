@@ -36,9 +36,9 @@ PreservedAnalyses HelloWorldPass::run(Function &function, FunctionAnalysisManage
         for (Function::iterator basicBlock = function.begin(); basicBlock != function.end(); ++basicBlock) {
             TotalBasicBlocks++;
             for (BasicBlock::iterator instruction = basicBlock->begin() ; instruction != basicBlock->end(); ++instruction) {
-                if (std::string(instruction->getOpcodeName()) == "add")
+                if (std::string(instruction->getOpcodeName()) == "add" || std::string(instruction->getOpcodeName()) == "fadd")
                     TotalAdd++;
-                if (std::string(instruction->getOpcodeName()) == "mul")
+                if (std::string(instruction->getOpcodeName()) == "mul" || std::string(instruction->getOpcodeName()) == "fmul")
                     TotalMul++;
             }
         }
