@@ -18,6 +18,7 @@ add_llvm_component_library(LLVMPasses
   IPO
   InstCombine
   GeexieCount
+  GeexieAS
   ObjCARC
   Scalar
   Support
