@@ -23,5 +23,6 @@ add_llvm_component_library(LLVMPasses
   Target
   TransformUtils
   Vectorize
+  Bogoroditskaya
   Instrumentation
   )
