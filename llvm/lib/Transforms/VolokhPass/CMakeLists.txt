@@ -1,4 +1,4 @@
-add_llvm_component_library( LLVMIVolokhPass
+add_llvm_component_library( LLVMVolokhPass
   VolokhPass.cpp
 
   ADDITIONAL_HEADER_DIRS
