@@ -22,6 +22,7 @@ add_llvm_component_library(LLVMPasses
   Support
   Target
   TransformUtils
+  OksanaKozlova
   Vectorize
   Instrumentation
   )
