@@ -11,6 +11,7 @@ add_llvm_component_library(LLVMPasses
   intrinsics_gen
 
   LINK_COMPONENTS
+  aanoskovCounter
   AggressiveInstCombine
   Analysis
   Core
