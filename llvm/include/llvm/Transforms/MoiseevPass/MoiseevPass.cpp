@@ -1,5 +1,5 @@
 #include "llvm/Transforms/MoiseevPass/MoiseevPass.h"
-#define DEBUG_TYPE "MoiseevPass"
+
 using namespace llvm;
 
 STATISTIC(TotalAdd, "Num of add");
