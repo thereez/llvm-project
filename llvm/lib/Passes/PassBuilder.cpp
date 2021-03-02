@@ -238,6 +238,8 @@
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
 
+#include "llvm/Transforms/MelnikovLab1Pass/MelnikovLab1Pass.h" // lab1 pass
+
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
