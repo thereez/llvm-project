@@ -2,6 +2,11 @@
 #include <iostream>
 using namespace llvm;
 
+void SdanilovPass::countLoopsNested(Loop* loop){
+  std::vector<Loop*> subLoop = loop->getSubLoops();
+  LoopCounter+= subLoop.size();
+}
+
 PreservedAnalyses SdanilovPass::run(Function &F, FunctionAnalysisManager &AM){
   auto pa = PreservedAnalyses::all();
   SmallVector<BinaryOperator*, 16> weak_ops;
@@ -63,7 +68,25 @@ PreservedAnalyses SdanilovPass::run(Function &F, FunctionAnalysisManager &AM){
     POW2->eraseFromParent();
   }
 
-  
+  //Lab1 Count Loops, Functions, BBs
+  LoopInfo &LI = AM.getResult<LoopAnalysis>(F);
+  if (!F.isDeclaration()){
+    ++FunctionCounter;
+  }
+  for (auto &BB: F){
+    BasicBlocksCounter++;
+    for (auto &I : BB){
+      std::string opcodename = I.getOpcodeName();
+      if (opcodename == "fadd" || opcodename == "fmul" || opcodename == "mul" || opcodename == "add"){
+          AddMulCounter++;
+      }
+    }
+  }
+  for (LoopInfo::iterator i = LI.begin(), b = LI.end(); i!=b; ++i){
+    LoopCounter++;
+    Loop *loopPtr = *i;
+    countLoopsNested(loopPtr);
+  }
   return pa;
 };
 
