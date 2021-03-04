@@ -17,6 +17,7 @@ add_llvm_component_library(LLVMPasses
   Coroutines
   IPO
   InstCombine
+  AKomyaginCount
   ObjCARC
   Scalar
   Support
