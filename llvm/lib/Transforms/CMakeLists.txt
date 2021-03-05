@@ -1,4 +1,5 @@
 add_subdirectory(Utils)
+add_subdirectory(idoroshenkoPass)
 add_subdirectory(Instrumentation)
 add_subdirectory(AggressiveInstCombine)
 add_subdirectory(InstCombine)
