@@ -26,9 +26,8 @@ PreservedAnalyses SdanilovPass::run(Function &F, FunctionAnalysisManager &AM){
       }
       if (auto POW = dyn_cast<CallBase>(&I)){
         Function* FCalled = POW->getCalledFunction();
-        errs() << FCalled->getIntrinsicID();
-        //TODO: how to get name of intrinsic llvm.pow.f32, not a number?
-        if ((int)FCalled->getIntrinsicID() == 225){
+        errs() << FCalled->getName() << " ";
+        if ((std::string)FCalled->getName() == "llvm.pow.f32"){
           errs() << "enter in powf function \n";
           Value* X;
           int num = 0;
