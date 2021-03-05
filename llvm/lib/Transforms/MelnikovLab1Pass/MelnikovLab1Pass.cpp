@@ -12,6 +12,14 @@ STATISTIC(TotalAdds, "Number of add instructions");
 STATISTIC(TotalMulls, "Number of mull instructions");
 
 
+void count_nested_loops(Loop* loop) {
+  for (Loop::iterator inner_loop = loop->begin(), inner_loop_end = loop->end(); inner_loop != inner_loop_end; ++inner_loop) {
+    TotalLoops++;
+    count_nested_loops(*inner_loop);
+  }
+}
+
+
 PreservedAnalyses MelnikovLab1Pass::run(Function &func, FunctionAnalysisManager &AM) {
   //errs() << func.getName() << "\n";
   //TotalFuncs++;
@@ -23,6 +31,7 @@ PreservedAnalyses MelnikovLab1Pass::run(Function &func, FunctionAnalysisManager 
 
     for (LoopInfo::iterator loop = LI.begin(), loop_end = LI.end(); loop != loop_end; ++loop) {  // iterationg over loops
       TotalLoops++;
+      count_nested_loops(*loop);
     }
     
     for (Function::iterator bb = func.begin(), last_bb = func.end(); bb != last_bb; ++bb){ // iterating across basic blocks (bb) in a function (func)
