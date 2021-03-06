@@ -16,14 +16,14 @@ class Sazanov_Lab1_Pass : public PassInfoMixin<Sazanov_Lab1_Pass>
 
 public:
 	
-	PreservedAnalyses run(Function &F, FunctionAlanysisManager &AM);
+	PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
 	
 	static bool isRequired()
 	{
 		return true;
 	}
 
-}
+};
 	
 } // namespace llvm
 

@@ -1,7 +1,8 @@
-#include "llvm/Transforms/Sazanov_Lab1_Pass.h"
+#include "llvm/Transforms/Sazanov_Lab1_Pass/Sazanov_Lab1_Pass.h"
 
 using namespace llvm;
 
+#define DEBUG_TYPE "Sazanov_Lab1_Pass" 
 STATISTIC(CountFunc, "Count of function definitions");
 STATISTIC(CountLoops, "Count of loops");
 STATISTIC(CountBlocks, "Count of blocks");
@@ -11,20 +12,20 @@ STATISTIC(CountAdd, "Count of add");
 void countLoopsRecursively(Loop* loop)
 {
 	++CountLoops;
-	for (auto *subloop : loop->getSubloops())
+	for (auto *subloop : loop->getSubLoops())
 	{
 		countLoopsRecursively(subloop);
 	}
 }
 
-PreservedAnalyses run(Function &F, FunctionAlanysisManager &AM)
+PreservedAnalyses Sazanov_Lab1_Pass::run(Function &F, FunctionAnalysisManager &AM)
 {
 	if (!F.isDeclaration())
 	{
 		++CountFunc;
 	}
 	
-	LoopInfo &loops = AM.getResult<LoopAnalysis>(func);
+	LoopInfo &loops = AM.getResult<LoopAnalysis>(F);
 	
 	for (auto *loop : loops)
 	{
@@ -37,11 +38,11 @@ PreservedAnalyses run(Function &F, FunctionAlanysisManager &AM)
 		for (auto &instruction : block)
 		{
 			std::string block_name = std::string(instruction.getOpcodeName());
-			if ((name == "mul") || (name == "fmul"))
+			if ((block_name == "mul") || (block_name == "fmul"))
 			{
 				++CountMul;
 			}
-			else if ((name == "add") || (name == "fadd"))
+			else if ((block_name == "add") || (block_name == "fadd"))
 			{
 				++CountAdd;
 			}
