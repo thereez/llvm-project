@@ -18,6 +18,7 @@ add_llvm_component_library(LLVMPasses
   HelloNew
   IPO
   InstCombine
+  AvmusatovCount
   ObjCARC
   PyanzinPass1
   Scalar
