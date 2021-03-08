@@ -23,6 +23,7 @@ add_llvm_component_library(LLVMPasses
   Target
   TransformUtils
   Vectorize
+  PankratovaPass
   IDoroshenkoPass
   Instrumentation
   VokhmyaninaCounter
