@@ -15,6 +15,7 @@ add_llvm_component_library(LLVMPasses
   Analysis
   Core
   Coroutines
+  HelloNew
   IPO
   InstCombine
   ObjCARC
@@ -24,5 +25,10 @@ add_llvm_component_library(LLVMPasses
   TransformUtils
   Vectorize
   Bogoroditskaya
+  PankratovaPass
+  IDoroshenkoPass
   Instrumentation
+  BaturinaPass
+  VokhmyaninaCounte
+  VolokhPass
   )
