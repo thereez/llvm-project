@@ -54,6 +54,9 @@ public:
     return selectShiftMask(N, 32, ShAmt);
   }
 
+  bool selectSExti32(SDValue N, SDValue &Val);
+  bool selectZExti32(SDValue N, SDValue &Val);
+
   bool MatchSRLIW(SDNode *N) const;
   bool MatchSLLIUW(SDNode *N) const;
 
