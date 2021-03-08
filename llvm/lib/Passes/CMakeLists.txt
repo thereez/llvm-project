@@ -19,6 +19,7 @@ add_llvm_component_library(LLVMPasses
   IPO
   InstCombine
   ObjCARC
+  PyanzinPass1
   Scalar
   Support
   Target
