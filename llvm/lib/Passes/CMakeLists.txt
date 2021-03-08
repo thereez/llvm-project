@@ -29,3 +29,5 @@ add_llvm_component_library(LLVMPasses
   Instrumentation
   BaturinaPass
   VokhmyaninaCounte
+  VolokhPass
+  )
