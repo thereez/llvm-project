@@ -248,6 +248,8 @@
 #include "llvm/Transforms/BaturinaPass/BaturinaPass.h"
 #include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
 
+#include "llvm/Transforms/MelnikovLab1Pass/MelnikovLab1Pass.h" // lab1 pass
+
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
