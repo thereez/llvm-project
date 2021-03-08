@@ -32,6 +32,7 @@ add_llvm_component_library(LLVMPasses
   PankratovaPass
   IDoroshenkoPass
   Instrumentation
+  pazamelin
   MelnikovLab1pass
   MoiseevPass
   KovakimyCount

@@ -251,6 +251,8 @@
 
 #include "llvm/Transforms/MelnikovLab1Pass/MelnikovLab1Pass.h" // lab1 pass
 
+#include "llvm/Transforms/pazamelin/pass.h"
+
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
