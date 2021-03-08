@@ -243,6 +243,7 @@
 #include "llvm/Transforms/Vectorize/LoopVectorize.h"
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
+#include "llvm/Transforms/MoiseevPass/MoiseevPass.h"
 #include "llvm/Transforms/VolokhPass/VolokhPass.h"
 #include "llvm/Transforms/BaturinaPass/BaturinaPass.h"
 #include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
