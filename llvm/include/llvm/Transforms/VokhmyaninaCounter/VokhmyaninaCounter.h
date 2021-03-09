@@ -3,11 +3,17 @@
 #define DEBUG_TYPE "VokhmyaninaCounter"
 #include "llvm/ADT/Statistic.h"
 
+#include "llvm/ADT/SmallVector.h"
+#include "llvm/IR/InstIterator.h"
+#include "llvm/IR/IntrinsicInst.h"
+#include "llvm/IR/Intrinsics.h"
+#include "llvm/IR/IRBuilder.h"
+
 #include "llvm/IR/PassManager.h"
-#include "llvm/IR/Function.h"
-#include "llvm/Analysis/LoopInfo.h"
-#include "llvm/IR/BasicBlock.h"
-#include "llvm/IR/Instruction.h"
+// #include "llvm/IR/Function.h"
+// #include "llvm/Analysis/LoopInfo.h"
+// #include "llvm/IR/BasicBlock.h"
+// #include "llvm/IR/Instruction.h"
 
 
 namespace llvm {
