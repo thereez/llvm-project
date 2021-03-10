@@ -236,6 +236,7 @@
 #include "llvm/Transforms/Vectorize/LoopVectorize.h"
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
+#include "llvm/Transforms/Korkunov_ASpass/Korkunov_ASpass.h"
 
 using namespace llvm;
 
