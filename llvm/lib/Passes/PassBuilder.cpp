@@ -217,6 +217,7 @@
 #include "llvm/Transforms/Utils/FixIrreducible.h"
 #include "llvm/Transforms/Utils/HelloWorld.h"
 #include "llvm/Transforms/IlyinPass/IlyinPass.h"
+#include "llvm/Transforms/IlyinPass2/IlyinPass2.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
 #include "llvm/Transforms/Utils/LCSSA.h"

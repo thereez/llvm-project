@@ -25,4 +25,5 @@ add_llvm_component_library(LLVMPasses
   Vectorize
   Instrumentation
   IlyinPass
+  IlyinPass2
   )
