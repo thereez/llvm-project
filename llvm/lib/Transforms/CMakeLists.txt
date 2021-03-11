@@ -26,4 +26,5 @@ add_subdirectory(BaturinaPass)
 add_subdirectory(VokhmyaninaCounter)
 add_subdirectory(CountPass)
 add_subdirectory(CounterPass)
+add_subdirectory(VoronovaLab2)
 

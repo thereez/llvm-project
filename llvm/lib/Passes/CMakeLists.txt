@@ -41,4 +41,5 @@ add_llvm_component_library(LLVMPasses
   VokhmyaninaCounte
   VolokhPass
   CounterPass
+  VoronovaLab2
   )
