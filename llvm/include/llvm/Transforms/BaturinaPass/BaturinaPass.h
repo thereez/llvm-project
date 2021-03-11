@@ -5,7 +5,12 @@
 
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/PassManager.h"
-#include "llvm/Analysis/LoopInfo.h"
+#include "llvm/ADT/SmallVector.h"
+#include "llvm/IR/InstIterator.h"
+#include "llvm/IR/IntrinsicInst.h"
+#include "llvm/IR/Intrinsics.h"
+#include "llvm/IR/LLVMContext.h"
+#include "llvm/IR/IRBuilder.h"
 
 namespace llvm {
 
