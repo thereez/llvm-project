@@ -16,4 +16,4 @@ public:
 
 } 
 
-#endif // LLVM_TRANSFORMS_UTILS_Bogoroditskaya2_H
+#endif // LLVM_TRANSFORMS_UTILS_BOGORODITSKAYA2_H
