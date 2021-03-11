@@ -237,7 +237,7 @@
 #include "llvm/Transforms/Vectorize/LoopVectorize.h"
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
-#include "llvm/Transforms/Selivanovskaya_count/Selivanovskaya_count.h"
+#include "llvm/Transforms/Selivanovskaya_lab2/Selivanovskaya_lab2.h"
 
 using namespace llvm;
 
