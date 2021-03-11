@@ -5,44 +5,54 @@
 // - Arithmetic instructions of type add and mull.
 
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
+#include "llvm/IR/InstIterator.h"
+#include "llvm/IR/Instructions.h"
 
 #define DEBUG_TYPE "idoroshenkopass"
 using namespace llvm;
 
-STATISTIC(TotalFuncsDef, "Number of function definitions");
-STATISTIC(TotalLoops, "Number of loops");
-STATISTIC(TotalBasicBlocks, "Number of basic blocks");
-STATISTIC(TotalAdd, "Number of 'Add'");
-STATISTIC(TotalMul, "Number of 'Mul'");
-
-void countLoopsRecursive(Loop* loop) {
-    TotalLoops++;
-    for (Loop::iterator newLoop = loop->begin(); newLoop != loop->end(); ++newLoop) {
-        countLoopsRecursive(*newLoop);
-    }
-}
-
-void countLoops(llvm::LoopAnalysis::Result& loops) {
-    for (LoopInfo::iterator loop = loops.begin(); loop != loops.end(); ++loop) {
-        countLoopsRecursive(*loop);
-    }
-}
 
 PreservedAnalyses IDoroshenkoPass::run(Function &function, FunctionAnalysisManager &AM) {
-    if(!function.isDeclaration()) {
-        TotalFuncsDef++;
-        llvm::LoopAnalysis::Result& loopsResult = AM.getResult<LoopAnalysis>(function);
-        countLoops(loopsResult);
-        for (Function::iterator basicBlock = function.begin(); basicBlock != function.end(); ++basicBlock) {
-            TotalBasicBlocks++;
-            for (BasicBlock::iterator instruction = basicBlock->begin() ; instruction != basicBlock->end(); ++instruction) {
-                if (std::string(instruction->getOpcodeName()) == "add" || std::string(instruction->getOpcodeName()) == "fadd")
-                    TotalAdd++;
-                if (std::string(instruction->getOpcodeName()) == "mul" || std::string(instruction->getOpcodeName()) == "fmul")
-                    TotalMul++;
+    
+    auto pa = PreservedAnalyses::all();
+
+    SmallVector<BinaryOperator*, 16> wark_set;
+    SmallVector<CallInst*, 16> wark_set_pow;
+    for (auto& I : instructions(function)) {
+        if (auto BO = dyn_cast<BinaryOperator>(&I)){
+            if(auto RHSC = dyn_cast<ConstantFP>(BO->getOperand(1))) {
+                if(RHSC->getValue().convertToFloat() == 0.f && BO->getOpcode() == Instruction::FAdd) {
+                    wark_set.push_back(BO);
+                    pa = PreservedAnalyses::none();
+                }
+                if(RHSC->getValue().convertToFloat() == 1.f && BO->getOpcode() == Instruction::FMul) {
+                    wark_set.push_back(BO);
+                    pa = PreservedAnalyses::none();
+                }
             }
         }
+        if (auto C = dyn_cast<CallInst>(&I)) 
+            if(C->getCalledFunction()->getName() == "powf") 
+                if(auto RHSC = dyn_cast<ConstantFP>(C->getOperand(1)))
+                    if(RHSC->getValue().convertToFloat() == 2.f) {
+                        wark_set_pow.push_back(C);
+                        pa = PreservedAnalyses::none();
+                    }
     }
 
-    return PreservedAnalyses::all();
+    while (!wark_set.empty()) {
+        auto BO = wark_set.pop_back_val();
+        BO->replaceAllUsesWith(BO->getOperand(0));
+        BO->eraseFromParent(); 
+    }
+
+    while (!wark_set_pow.empty()) {
+        auto C = wark_set_pow.pop_back_val();
+        auto mul = BinaryOperator::Create(Instruction::FMul, C->getOperand(0), C->getOperand(0));
+        C->replaceAllUsesWith(mul);
+        mul->insertBefore(C);
+        C->eraseFromParent();
+    }
+
+    return pa;
 }
