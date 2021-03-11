@@ -222,6 +222,7 @@
 #include "llvm/Transforms/AKomyaginCount/AKomyaginCount.h"
 #include "llvm/Transforms/AvmusatovCount/AvmusatovCount.h"
 #include "llvm/Transforms/PyanzinPass1/PyanzinPass1.h"
+#include "llvm/Transforms/Pyanzin_ASPass/Pyanzin_ASPass.h"
 #include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
