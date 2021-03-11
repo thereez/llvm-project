@@ -340,6 +340,7 @@ FUNCTION_PASS("memprof", MemProfilerPass())
 FUNCTION_PASS("MoiseevPass", MoiseevPass())
 FUNCTION_PASS("VolokhPass", VolokhPass())
 FUNCTION_PASS("BaturinaPass", BaturinaPass())
+FUNCTION_PASS("MoiseevPass2", MoiseevPass2())
 #undef FUNCTION_PASS
 
 #ifndef FUNCTION_PASS_WITH_PARAMS
