@@ -11,3 +11,4 @@ add_subdirectory(Coroutines)
 add_subdirectory(CFGuard)
 
 add_subdirectory(MelnikovLab1Pass)
+add_subdirectory(MelnikovLab2Pass)

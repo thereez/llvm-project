@@ -27,4 +27,5 @@ add_llvm_component_library(LLVMPasses
   Instrumentation
 
   MelnikovLab1pass
+  MelnikovLab2pass
   )

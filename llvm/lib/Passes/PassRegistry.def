@@ -332,6 +332,7 @@ FUNCTION_PASS("tsan", ThreadSanitizerPass())
 FUNCTION_PASS("memprof", MemProfilerPass())
 
 FUNCTION_PASS("MelnikovLab1Pass", MelnikovLab1Pass()) // Lab1 pass
+FUNCTION_PASS("MelnikovLab2Pass", MelnikovLab2Pass()) 
 
 #undef FUNCTION_PASS
 

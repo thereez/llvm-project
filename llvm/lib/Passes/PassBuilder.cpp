@@ -239,6 +239,7 @@
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
 
 #include "llvm/Transforms/MelnikovLab1Pass/MelnikovLab1Pass.h" // lab1 pass
+#include "llvm/Transforms/MelnikovLab2Pass/MelnikovLab2Pass.h"
 
 using namespace llvm;
 
