@@ -1,4 +1,4 @@
-#include "llvm/Transforms/MyCounter/MyCounter.h"
+#include "llvm/Transforms/Selivanovskaya_lab1/Selivanovskaya_lab1.h"
 
 using namespace llvm;
 using namespace std;
@@ -16,7 +16,7 @@ void LoopsCount(Loop * loop){
     }
 }
 
-PreservedAnalyses MyCounter::run(Function &F, FunctionAnalysisManager &AM) {
+PreservedAnalyses Selivanovskaya_lab1::run(Function &F, FunctionAnalysisManager &AM) {
     if (!F.isDeclaration()){
         FuncsNum++;
 

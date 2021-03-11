@@ -1,6 +1,6 @@
 #pragma once
 
-#define DEBUG_TYPE "MyCounter"
+#define DEBUG_TYPE "Selivanovskaya_lab1"
 
 #include "llvm/Analysis/LoopInfo.h"
 #include "llvm/IR/BasicBlock.h"
@@ -11,7 +11,7 @@
 
 namespace llvm {
 
-class MyCounter : public PassInfoMixin<MyCounter> {
+class Selivanovskaya_lab1 : public PassInfoMixin<Selivanovskaya_lab1> {
 public:
   PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
   static bool isRequired() { return true; }

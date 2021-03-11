@@ -24,5 +24,5 @@ add_llvm_component_library(LLVMPasses
   TransformUtils
   Vectorize
   Instrumentation
-  MyCounter
+  Selivanovskaya_lab1
   )
