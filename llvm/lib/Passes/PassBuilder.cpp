@@ -242,6 +242,7 @@
 #include "llvm/Transforms/VolokhPass/VolokhPass.h"
 #include "llvm/Transforms/BaturinaPass/BaturinaPass.h"
 #include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
+#include "llvm/Transforms/VolokhSecondPass/VolokhSecondPass.h"
 
 using namespace llvm;
 

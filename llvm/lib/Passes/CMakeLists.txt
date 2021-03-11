@@ -30,4 +30,5 @@ add_llvm_component_library(LLVMPasses
   BaturinaPass
   VokhmyaninaCounte
   VolokhPass
+  VolokhSecondPass
   )
