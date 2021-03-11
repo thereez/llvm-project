@@ -20,7 +20,11 @@ add_llvm_component_library(LLVMPasses
   IPO
   InstCombine
   AKomyaginCount
+<<<<<<< HEAD
   AKomyaginASPass
+=======
+  AvmusatovCount
+>>>>>>> ba9a2323f69c9f312dc70d2d0b4ab6c0f228ec2a
   ObjCARC
   PyanzinPass1
   Scalar
