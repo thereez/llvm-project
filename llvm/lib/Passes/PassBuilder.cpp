@@ -233,6 +233,7 @@
 #include "llvm/Transforms/Utils/UnifyFunctionExitNodes.h"
 #include "llvm/Transforms/Utils/UnifyLoopExits.h"
 #include "llvm/Transforms/ArivanovCount/ArivanovCount.h"
+#include "llvm/Transforms/ArivanovLab2/ArivanovLab2.h"
 #include "llvm/Transforms/Utils/UniqueInternalLinkageNames.h"
 #include "llvm/Transforms/Vectorize/LoadStoreVectorizer.h"
 #include "llvm/Transforms/Vectorize/LoopVectorize.h"
