@@ -12,9 +12,9 @@ class MelnikovLab2Pass : public PassInfoMixin<MelnikovLab2Pass> {
 public:
   PreservedAnalyses run(Function &func, FunctionAnalysisManager &AM);
 
-  static bool isRequired() { return true; }  // works even whan all optimisations are turned off 
+  static bool isRequired() { return true; }  
 };
 
-} // namespace llvm
+} 
 
 #endif
