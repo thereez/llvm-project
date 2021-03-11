@@ -18,6 +18,7 @@ add_llvm_component_library(LLVMPasses
   IPO
   InstCombine
   ObjCARC
+  OksanaKozlova
   Scalar
   Support
   Target
