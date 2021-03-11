@@ -25,6 +25,7 @@ add_llvm_component_library(LLVMPasses
   TransformUtils
   Vectorize
   Bogoroditskaya
+  Bogoroditskaya2
   PankratovaPass
   IDoroshenkoPass
   Instrumentation
