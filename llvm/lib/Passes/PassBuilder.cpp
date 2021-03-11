@@ -288,6 +288,8 @@
 
 #include "llvm/Transforms/KatyaMalyshevaLab1Pass/KatyaMalyshevaLab1Pass.h"
 #include "llvm/Transforms/KatyaMalyshevaLab2Pass/KatyaMalyshevaLab2Pass.h"
+#include "llvm/Transforms/aanoskovASPass/aanoskovASPass.h"
+
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
