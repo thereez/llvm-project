@@ -254,6 +254,7 @@
 
 #include "llvm/Transforms/pazamelin/pass.h"
 #include "llvm/Transforms/KatyaMalyshevaLab1Pass/KatyaMalyshevaLab1Pass.h"
+#include "llvm/Transforms/KatyaMalyshevaLab2Pass/KatyaMalyshevaLab2Pass.h"
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
