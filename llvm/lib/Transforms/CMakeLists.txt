@@ -14,9 +14,7 @@ add_subdirectory(PankratovaPass)
 add_subdirectory(Coroutines)
 add_subdirectory(CFGuard)
 add_subdirectory(AKomyaginCount)
-<<<<<<< HEAD
 add_subdirectory(AKomyaginASPass)
-=======
 add_subdirectory(MelnikovLab1Pass)
 add_subdirectory(MoiseevPass)
 add_subdirectory(AvmusatovCount)
@@ -26,4 +24,3 @@ add_subdirectory(VolokhPass)
 add_subdirectory(BaturinaPass)
 add_subdirectory(VokhmyaninaCounter)
 add_subdirectory(CountPass)
->>>>>>> ba9a2323f69c9f312dc70d2d0b4ab6c0f228ec2a

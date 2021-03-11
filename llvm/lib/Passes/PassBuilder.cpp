@@ -219,14 +219,11 @@
 #include "llvm/Transforms/Utils/FixIrreducible.h"
 #include "llvm/Transforms/Utils/HelloWorld.h"
 #include "llvm/Transforms/AKomyaginCount/AKomyaginCount.h"
-<<<<<<< HEAD
 #include "llvm/Transforms/AKomyaginASPass/AKomyaginASPass.h"
-=======
 #include "llvm/Transforms/AvmusatovCount/AvmusatovCount.h"
 #include "llvm/Transforms/PyanzinPass1/PyanzinPass1.h"
 #include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
->>>>>>> ba9a2323f69c9f312dc70d2d0b4ab6c0f228ec2a
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
 #include "llvm/Transforms/Utils/LCSSA.h"
