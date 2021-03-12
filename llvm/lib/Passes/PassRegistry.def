@@ -341,11 +341,11 @@ FUNCTION_PASS("msan", MemorySanitizerPass({}))
 FUNCTION_PASS("kmsan", MemorySanitizerPass({0, false, /*Kernel=*/true}))
 FUNCTION_PASS("tsan", ThreadSanitizerPass())
 FUNCTION_PASS("memprof", MemProfilerPass())
+FUNCTION_PASS("sdanilov", SdanilovPass())   
 FUNCTION_PASS("MelnikovLab1Pass", MelnikovLab1Pass()) // Lab1 pass
 FUNCTION_PASS("MoiseevPass", MoiseevPass())
 FUNCTION_PASS("VolokhPass", VolokhPass())
 FUNCTION_PASS("BaturinaPass", BaturinaPass())
-
 #undef FUNCTION_PASS
 
 #ifndef FUNCTION_PASS_WITH_PARAMS
