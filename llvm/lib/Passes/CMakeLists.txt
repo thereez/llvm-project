@@ -21,6 +21,7 @@ add_llvm_component_library(LLVMPasses
   InstCombine
   AKomyaginCount
   AvmusatovCount
+  AvmusatovAS
   ObjCARC
   PyanzinPass1
   Scalar
