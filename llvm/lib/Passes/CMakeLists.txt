@@ -12,6 +12,7 @@ add_llvm_component_library(LLVMPasses
   intrinsics_gen
 
   LINK_COMPONENTS
+  aanoskovCounter
   AggressiveInstCombine
   Analysis
   Core
@@ -28,11 +29,13 @@ add_llvm_component_library(LLVMPasses
   Support
   Target
   TransformUtils
+  OksanaKozlova
   Vectorize
   Bogoroditskaya
   PankratovaPass
   IDoroshenkoPass
   Instrumentation
+  Selivanovskaya_lab1
   IlyinPass
   pazamelin
   MelnikovLab1pass
