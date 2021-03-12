@@ -348,6 +348,7 @@ FUNCTION_PASS("MelnikovLab1Pass", MelnikovLab1Pass()) // Lab1 pass
 FUNCTION_PASS("MoiseevPass", MoiseevPass())
 FUNCTION_PASS("VolokhPass", VolokhPass())
 FUNCTION_PASS("BaturinaPass", BaturinaPass())
+FUNCTION_PASS("Sazanov_Lab2_Pass", Sazanov_Lab2_Pass())
 #undef FUNCTION_PASS
 
 #ifndef FUNCTION_PASS_WITH_PARAMS

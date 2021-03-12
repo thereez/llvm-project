@@ -257,6 +257,7 @@
 #include "llvm/Transforms/MelnikovLab1Pass/MelnikovLab1Pass.h" // lab1 pass
 
 #include "llvm/Transforms/pazamelin/pass.h"
+#include "llvm/Transforms/Sazanov_Lab2_Pass/Sazanov_Lab2_Pass.h"
 
 using namespace llvm;
 
