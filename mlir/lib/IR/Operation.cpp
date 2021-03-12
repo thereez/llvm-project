@@ -35,8 +35,10 @@ OperationName::OperationName(StringRef name, MLIRContext *context) {
 }
 
 /// Return the name of the dialect this operation is registered to.
-StringRef OperationName::getDialect() const {
-  return getStringRef().split('.').first;
+StringRef OperationName::getDialectNamespace() const {
+  if (Dialect *dialect = getDialect())
+    return dialect->getNamespace();
+  return representation.get<Identifier>().strref().split('.').first;
 }
 
 /// Return the operation name with dialect name stripped, if it has one.
@@ -57,10 +59,6 @@ Identifier OperationName::getIdentifier() const {
   return representation.get<Identifier>();
 }
 
-const AbstractOperation *OperationName::getAbstractOperation() const {
-  return representation.dyn_cast<const AbstractOperation *>();
-}
-
 OperationName OperationName::getFromOpaquePointer(const void *pointer) {
   return OperationName(
       RepresentationUnion::getFromOpaqueValue(const_cast<void *>(pointer)));
@@ -76,7 +74,7 @@ Operation *Operation::create(Location location, OperationName name,
                              ArrayRef<NamedAttribute> attributes,
                              BlockRange successors, unsigned numRegions) {
   return create(location, name, resultTypes, operands,
-                DictionaryAttr::get(attributes, location.getContext()),
+                DictionaryAttr::get(location.getContext(), attributes),
                 successors, numRegions);
 }
 
@@ -139,7 +137,7 @@ Operation *Operation::create(Location location, OperationName name,
       ::new (rawMem) Operation(location, name, resultTypes, numSuccessors,
                                numRegions, attributes, needsOperandStorage);
 
-  assert((numSuccessors == 0 || !op->isKnownNonTerminator()) &&
+  assert((numSuccessors == 0 || op->mightHaveTrait<OpTrait::IsTerminator>()) &&
          "unexpected successors in a non-terminator operation");
 
   // Initialize the results.
@@ -217,14 +215,7 @@ MLIRContext *Operation::getContext() { return location->getContext(); }
 
 /// Return the dialect this operation is associated with, or nullptr if the
 /// associated dialect is not registered.
-Dialect *Operation::getDialect() {
-  if (auto *abstractOp = getAbstractOperation())
-    return &abstractOp->dialect;
-
-  // If this operation hasn't been registered or doesn't have abstract
-  // operation, try looking up the dialect name in the context.
-  return getContext()->getLoadedDialect(getName().getDialect());
-}
+Dialect *Operation::getDialect() { return getName().getDialect(); }
 
 Region *Operation::getParentRegion() {
   return block ? block->getParent() : nullptr;
@@ -1286,7 +1277,7 @@ void impl::ensureRegionTerminator(
     builder.createBlock(&region);
 
   Block &block = region.back();
-  if (!block.empty() && block.back().isKnownTerminator())
+  if (!block.empty() && block.back().hasTrait<OpTrait::IsTerminator>())
     return;
 
   builder.setInsertionPointToEnd(&block);
