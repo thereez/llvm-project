@@ -31,6 +31,7 @@ add_llvm_component_library(LLVMPasses
   OksanaKozlova
   Vectorize
   Bogoroditskaya
+  Bogoroditskaya2
   PankratovaPass
   IDoroshenkoPass
   Instrumentation
