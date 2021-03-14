@@ -9,7 +9,7 @@ STATISTIC(cntadd, "Number of adds");
 STATISTIC(cntmul, "Number of muls");
 
 
-void LoopsCount(Loop *loop) {
+static void LoopsCount(Loop *loop) {
   cntloop++;
   for (Loop::iterator curr_loop = loop->begin(); curr_loop != loop->end();
        ++curr_loop) {

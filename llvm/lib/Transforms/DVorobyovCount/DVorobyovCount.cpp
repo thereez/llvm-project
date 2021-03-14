@@ -12,31 +12,31 @@ STATISTIC(CountingMults, "Number of muls");
 
 using namespace llvm;
 
-void counterLoop(Loop* loop)
+static void counterLoop(Loop* loop)
 {
     TotalLoops++;
     for (auto id = loop->begin(); id != loop->end(); ++id)
         counterLoop(*id);
 }
 
-PreservedAnalyses DVorobyovCountPass::run(Function &F, FunctionAnalysisManager &AM) 
+PreservedAnalyses DVorobyovCountPass::run(Function &F, FunctionAnalysisManager &AM)
 {
   if (F.isDeclaration())
   {
-	  return 1;
+	  return PreservedAnalyses::all();
   }
   else{
 	  TotalFuncs++;
 	  llvm::LoopAnalysis::Result& result = AM.getResult<LoopAnalysis>(F);
 	  for (auto id = result.begin(); id != result.end(); ++id)
-	    counterLoop(*id); 
+	    counterLoop(*id);
 	  for (auto idF = F.begin(); idF != F.end(); ++idF)
 	  {
 		  TotalBasicBlocks++;
 		  for (auto idB = idF->begin(); idB != idF->end(); ++idB)
 		  {
 			  std::string str = std::string(idB->getOpcodeName());
-			  if (str == "add" || str == "fadd") 
+			  if (str == "add" || str == "fadd")
 				CountingAdds++;
               if (str == "mul" || str == "fmul")
 				CountingMults++;
@@ -44,4 +44,4 @@ PreservedAnalyses DVorobyovCountPass::run(Function &F, FunctionAnalysisManager &
 	  }
   }
   return PreservedAnalyses::all();
-} 
+}

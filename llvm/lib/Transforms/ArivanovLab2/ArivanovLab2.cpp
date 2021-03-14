@@ -11,8 +11,8 @@ PreservedAnalyses ArivanovLab2Pass::run(Function &F, FunctionAnalysisManager &FA
     for (auto& I : instructions(F)) {
         if (auto BO = dyn_cast<BinaryOperator>(&I)) {
             if (auto RHSC = dyn_cast<ConstantFP>(BO->getOperand(0))) {
-                if (RHSC->getValue().convertToFloat() == 0.f && BO->getOpcode() == Instruction::FAdd || 
-                    RHSC->getValue().convertToFloat() == 1.f && BO->getOpcode() == Instruction::FMul) 
+                if ((RHSC->getValue().convertToFloat() == 0.f) && (BO->getOpcode() == Instruction::FAdd) ||
+                    (RHSC->getValue().convertToFloat() == 1.f) && (BO->getOpcode() == Instruction::FMul))
                 {
                     LO_vec.push_back(BO);
                     pa = PreservedAnalyses::none();
@@ -58,4 +58,4 @@ PreservedAnalyses ArivanovLab2Pass::run(Function &F, FunctionAnalysisManager &FA
         CI->eraseFromParent();
     }
     return pa;
-} 
+}
