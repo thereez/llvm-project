@@ -33,6 +33,8 @@ add_llvm_component_library(LLVMPasses
   PankratovaPass
   IDoroshenkoPass
   Instrumentation
+  ArivanovCount
+  ArivanovLab2
   Strakhovcounter
   DVorobyovCount
   Selivanovskaya_lab1
