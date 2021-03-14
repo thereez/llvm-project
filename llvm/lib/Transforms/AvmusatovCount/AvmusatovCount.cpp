@@ -15,7 +15,7 @@ void countOperations(BasicBlock& basicBlock) {
     }
 }
 
-void countInnerLoops(Loop* loop) {
+static void countInnerLoops(Loop* loop) {
     ++loopsCount;
     for (Loop* innerLoop : loop->getSubLoops()) {
         countInnerLoops(innerLoop);

@@ -15,7 +15,7 @@ STATISTIC(TotalLoops, "Number of loops");
 STATISTIC(TotalBasicBlocks, "Number of basic blocks");
 STATISTIC(TotalArithmInstr, "Number of arithmetic instructions");
 
-void LoopCounter(Loop* L) {
+static void LoopCounter(Loop* L) {
     TotalLoops++;
     for (auto loop = L->begin(); loop != L->end(); ++loop) {
         LoopCounter(*loop);
@@ -30,14 +30,14 @@ PreservedAnalyses OksanaKozlovaPass::run(Function &F, FunctionAnalysisManager &A
   }
   llvm::LoopAnalysis::Result& L = AM.getResult<LoopAnalysis>(F);
   for (auto loop = L.begin(); loop != L.end(); ++loop) {
-        LoopCounter(*loop); 
+        LoopCounter(*loop);
   }
   for (auto B = F.begin(); B != F.end(); ++B) {
     TotalBasicBlocks++;
     for (auto I = B->begin(); I != B->end(); ++I) {
       std::string instr = std::string(I->getOpcodeName());
-      if (instr == "add" || instr == "fadd" || instr == "mul" || instr == "fmul") { 
-        TotalArithmInstr++; 
+      if (instr == "add" || instr == "fadd" || instr == "mul" || instr == "fmul") {
+        TotalArithmInstr++;
       }
     }
   }
