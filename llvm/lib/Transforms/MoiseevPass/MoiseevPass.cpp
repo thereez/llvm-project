@@ -9,8 +9,8 @@ STATISTIC(TotalLoops, "Num of loops");
 STATISTIC(TotalBasicBlocks, "Num of basic blocks");
 
 
-void countLoops(Loop * loop){ 
-    
+static void countLoops(Loop * loop){
+
     TotalLoops++;
 
     for (Loop::iterator loopIterator = loop->begin(); loopIterator != loop->end(); ++loopIterator){
@@ -45,3 +45,4 @@ PreservedAnalyses MoiseevPass::run(Function &func, FunctionAnalysisManager &AM){
         }
     }
     return PreservedAnalyses::all();
+}
