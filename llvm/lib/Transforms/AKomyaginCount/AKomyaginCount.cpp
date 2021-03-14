@@ -2,7 +2,7 @@
 
 using namespace llvm;
 
-void countInnerLoops(Loop* loop) {
+static void countInnerLoops(Loop* loop) {
     ++LoopsCount;
     for (Loop* innerLoop : loop->getSubLoops()) {
         countInnerLoops(innerLoop);
@@ -33,4 +33,4 @@ PreservedAnalyses AKomyaginCount::run(Function& F, FunctionAnalysisManager& AM) 
     }
 
     return PreservedAnalyses::all();
-} 
+}
