@@ -1,18 +1,19 @@
 #pragma once
 
-#define DEBUG_TYPE "VokhmyaninaCounter"
+#define DEBUG_TYPE "VokhmyaninaLab2"
 #include "llvm/ADT/Statistic.h"
 
+#include "llvm/ADT/SmallVector.h"
+#include "llvm/IR/InstIterator.h"
+#include "llvm/IR/IntrinsicInst.h"
+#include "llvm/IR/Intrinsics.h"
+
 #include "llvm/IR/PassManager.h"
-#include "llvm/IR/Function.h"
-#include "llvm/Analysis/LoopInfo.h"
-#include "llvm/IR/BasicBlock.h"
-#include "llvm/IR/Instruction.h"
 
 
 namespace llvm {
 
-class VokhmyaninaCounter : public PassInfoMixin<VokhmyaninaCounter> {
+class VokhmyaninaLab2 : public PassInfoMixin<VokhmyaninaLab2> {
 public:
   PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
   static bool isRequired() { return true; }

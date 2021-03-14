@@ -238,6 +238,7 @@
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
 #include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
+#include "llvm/Transforms/VokhmyaninaLab2/VokhmyaninaLab2.h"
 
 using namespace llvm;
 
