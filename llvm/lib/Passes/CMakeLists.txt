@@ -56,6 +56,7 @@ add_llvm_component_library(LLVMPasses
   BaturinaPass
   VokhmyaninaCounter
   VolokhPass
+  Sazanov_Lab2_Pass
   VolokhSecondPass
   KatyaMalyshevaLab1Pass
   KatyaMalyshevaLab2Pass
