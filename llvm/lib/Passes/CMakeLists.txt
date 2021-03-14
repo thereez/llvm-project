@@ -55,4 +55,5 @@ add_llvm_component_library(LLVMPasses
   KatyaMalyshevaLab1Pass
   KatyaMalyshevaLab2Pass
   CounterPass
+  VoronovaLab2
   )
