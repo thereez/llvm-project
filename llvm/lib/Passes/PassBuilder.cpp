@@ -223,6 +223,7 @@
 #include "llvm/Transforms/Utils/HelloWorld.h"
 #include "llvm/Transforms/IlyinPass/IlyinPass.h"
 #include "llvm/Transforms/AKomyaginCount/AKomyaginCount.h"
+#include "llvm/Transforms/AKomyaginASPass/AKomyaginASPass.h"
 #include "llvm/Transforms/AvmusatovCount/AvmusatovCount.h"
 #include "llvm/Transforms/PyanzinPass1/PyanzinPass1.h"
 #include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
