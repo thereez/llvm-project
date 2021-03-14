@@ -1,4 +1,4 @@
-#include "llvm/include/llvm/Transforms/VolokhPass/VolokhPass.h"
+#include "llvm/Transforms/VolokhPass/VolokhPass.h"
 #define DEBUG_TYPE "volokhpass"
 using namespace llvm;
 
@@ -8,7 +8,7 @@ STATISTIC(TotalBasicBlocks, "Num of basic blocks");
 STATISTIC(TotalAdd, "Num of add operators");
 STATISTIC(TotalMul, "Num of multiply operators");
 
-void countLoops(Loop * loop){ // rec cnt via iterator
+static void countLoops(Loop * loop){ // rec cnt via iterator
     TotalLoops++;
     for (Loop::iterator loopIterator = loop->begin(); loopIterator != loop->end(); ++loopIterator){
         countLoops(*loopIterator);
