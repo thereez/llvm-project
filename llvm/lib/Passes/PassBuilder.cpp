@@ -139,6 +139,7 @@
 #include "llvm/Transforms/DVorobyovCount/DVorobyovCount.h"
 #include "llvm/Transforms/KovakimyCount/KovakimyCount.h"
 #include "llvm/Transforms/ObjCARC.h"
+#include "llvm/Transforms/CounterPass/FirstLab.h"
 #include "llvm/Transforms/OksanaKozlova/OksanaKozlova.h"
 #include "llvm/Transforms/Scalar/ADCE.h"
 #include "llvm/Transforms/Scalar/AlignmentFromAssumptions.h"
