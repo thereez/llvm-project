@@ -85,6 +85,7 @@
 #include "llvm/Transforms/Coroutines/CoroEarly.h"
 #include "llvm/Transforms/Coroutines/CoroElide.h"
 #include "llvm/Transforms/Coroutines/CoroSplit.h"
+#include "llvm/Transforms/Bogoroditskaya/Bogoroditskaya.h"
 #include "llvm/Transforms/IPO/AlwaysInliner.h"
 #include "llvm/Transforms/IPO/Annotation2Metadata.h"
 #include "llvm/Transforms/IPO/ArgumentPromotion.h"
@@ -135,7 +136,11 @@
 #include "llvm/Transforms/Instrumentation/PoisonChecking.h"
 #include "llvm/Transforms/Instrumentation/SanitizerCoverage.h"
 #include "llvm/Transforms/Instrumentation/ThreadSanitizer.h"
+#include "llvm/Transforms/DVorobyovCount/DVorobyovCount.h"
+#include "llvm/Transforms/KovakimyCount/KovakimyCount.h"
 #include "llvm/Transforms/ObjCARC.h"
+#include "llvm/Transforms/CounterPass/FirstLab.h"
+#include "llvm/Transforms/OksanaKozlova/OksanaKozlova.h"
 #include "llvm/Transforms/Scalar/ADCE.h"
 #include "llvm/Transforms/Scalar/AlignmentFromAssumptions.h"
 #include "llvm/Transforms/Scalar/AnnotationRemarks.h"
@@ -216,6 +221,12 @@
 #include "llvm/Transforms/Utils/EntryExitInstrumenter.h"
 #include "llvm/Transforms/Utils/FixIrreducible.h"
 #include "llvm/Transforms/Utils/HelloWorld.h"
+#include "llvm/Transforms/IlyinPass/IlyinPass.h"
+#include "llvm/Transforms/AKomyaginCount/AKomyaginCount.h"
+#include "llvm/Transforms/AvmusatovCount/AvmusatovCount.h"
+#include "llvm/Transforms/PyanzinPass1/PyanzinPass1.h"
+#include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
+#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
 #include "llvm/Transforms/Utils/LCSSA.h"
@@ -232,13 +243,30 @@
 #include "llvm/Transforms/Utils/SymbolRewriter.h"
 #include "llvm/Transforms/Utils/UnifyFunctionExitNodes.h"
 #include "llvm/Transforms/Utils/UnifyLoopExits.h"
+#include "llvm/Transforms/ArivanovCount/ArivanovCount.h"
+#include "llvm/Transforms/ArivanovLab2/ArivanovLab2.h"
 #include "llvm/Transforms/Utils/UniqueInternalLinkageNames.h"
+#include "llvm/Transforms/Utils/SdanilovPass.h"
 #include "llvm/Transforms/Vectorize/LoadStoreVectorizer.h"
 #include "llvm/Transforms/Vectorize/LoopVectorize.h"
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
 #include "llvm/Transforms/Selivanovskaya_lab2/Selivanovskaya_lab2.h"
+#include "llvm/Transforms/Korkunov_ASpass/Korkunov_ASpass.h"
+#include "llvm/Transforms/Sazanov_Lab1_Pass/Sazanov_Lab1_Pass.h"
+#include "llvm/Transforms/Strakhovcounter/Strakhovcounter.h"
+#include "llvm/Transforms/Selivanovskaya_lab1/Selivanovskaya_lab1.h"
+#include "llvm/Transforms/aanoskovCounter/aanoskovCounter.h"
+#include "llvm/Transforms/MoiseevPass/MoiseevPass.h"
+#include "llvm/Transforms/VolokhPass/VolokhPass.h"
+#include "llvm/Transforms/BaturinaPass/BaturinaPass.h"
+#include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
 
+#include "llvm/Transforms/MelnikovLab1Pass/MelnikovLab1Pass.h" // lab1 pass
+
+#include "llvm/Transforms/pazamelin/pass.h"
+#include "llvm/Transforms/KatyaMalyshevaLab1Pass/KatyaMalyshevaLab1Pass.h"
+#include "llvm/Transforms/KatyaMalyshevaLab2Pass/KatyaMalyshevaLab2Pass.h"
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
@@ -1499,6 +1527,12 @@ PassBuilder::buildThinLTOPreLinkDefaultPipeline(OptimizationLevel Level) {
   if (PGOOpt && PGOOpt->PseudoProbeForProfiling)
     MPM.addPass(PseudoProbeUpdatePass());
 
+  // Handle OptimizerLastEPCallbacks added by clang on PreLink. Actual
+  // optimization is going to be done in PostLink stage, but clang can't
+  // add callbacks there in case of in-process ThinLTO called by linker.
+  for (auto &C : OptimizerLastEPCallbacks)
+    C(MPM, Level);
+
   // Emit annotation remarks.
   addAnnotationRemarksPass(MPM);
 
@@ -1534,8 +1568,17 @@ ModulePassManager PassBuilder::buildThinLTODefaultPipeline(
     MPM.addPass(LowerTypeTestsPass(nullptr, ImportSummary));
   }
 
-  if (Level == OptimizationLevel::O0)
+  if (Level == OptimizationLevel::O0) {
+    // Run a second time to clean up any type tests left behind by WPD for use
+    // in ICP.
+    MPM.addPass(LowerTypeTestsPass(nullptr, nullptr, true));
+    // Drop available_externally and unreferenced globals. This is necessary
+    // with ThinLTO in order to avoid leaving undefined references to dead
+    // globals in the object file.
+    MPM.addPass(EliminateAvailableExternallyPass());
+    MPM.addPass(GlobalDCEPass());
     return MPM;
+  }
 
   // Force any function attributes we want the rest of the pipeline to observe.
   MPM.addPass(ForceFunctionAttrsPass());
