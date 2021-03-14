@@ -24,6 +24,7 @@ add_llvm_component_library(LLVMPasses
   AvmusatovCount
   ObjCARC
   PyanzinPass1
+  Pyanzin_ASPass
   Scalar
   Support
   Target
