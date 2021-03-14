@@ -14,7 +14,7 @@
 
 
 namespace llvm {
-    class VolokhSecondPass : public PassInfoMixin<VolokhPass> {
+    class VolokhSecondPass : public PassInfoMixin<VolokhSecondPass> {
         public:
             PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
             static bool isRequired() {return true;}

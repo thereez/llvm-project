@@ -1,4 +1,4 @@
-#include "llvm/include/llvm/Transforms/VolokhSecondPass/VolokhSecondPass.h"
+#include "llvm/Transforms/VolokhSecondPass/VolokhSecondPass.h"
 
 using namespace llvm;
 
@@ -25,7 +25,7 @@ PreservedAnalyses VolokhSecondPass::run(Function &func, FunctionAnalysisManager 
                         wark_set_lefts.push_back(binaryOp);
                         pa = PreservedAnalyses::none();
                     }
-                } 
+                }
             }
             // right elem
             else if(auto right = dyn_cast<ConstantFP>(binaryOp->getOperand(1))) {
@@ -58,7 +58,7 @@ PreservedAnalyses VolokhSecondPass::run(Function &func, FunctionAnalysisManager 
         }
 
     }
-    
+
     // del left
     while (!wark_set_lefts.empty()) {
         auto binaryOp = wark_set_lefts.pop_back_val();
@@ -81,7 +81,7 @@ PreservedAnalyses VolokhSecondPass::run(Function &func, FunctionAnalysisManager 
         mul->insertBefore(callInst);
         callInst->eraseFromParent();
     }
-    
+
     return pa;
 
 }
