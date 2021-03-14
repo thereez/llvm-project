@@ -9,7 +9,7 @@ STATISTIC(TotalLoops, "Number of loops");
 STATISTIC(TotalAddInstrs, "Number of add instructions");
 STATISTIC(TotalMulInstrs, "Number of mul instructions");
 
-void countLoops(Loop * loop)
+static void countLoops(Loop * loop)
 {
     TotalLoops++;
     for (auto l = loop->begin(); l != loop->end(); l++)
@@ -17,7 +17,7 @@ void countLoops(Loop * loop)
 }
 
 PreservedAnalyses PyanzinPass1::run(Function &F,
-                                      FunctionAnalysisManager &AM) 
+                                      FunctionAnalysisManager &AM)
                                     {
 
   TotalFuncs++;
@@ -31,7 +31,7 @@ PreservedAnalyses PyanzinPass1::run(Function &F,
       {
           std::string inst = std::string(I.getOpcodeName());
           if (inst == "add" || inst == "fadd") TotalAddInstrs++;
-          if (inst == "mul" || inst == "fmul") TotalMulInstrs++; 
+          if (inst == "mul" || inst == "fmul") TotalMulInstrs++;
       }
   }
 

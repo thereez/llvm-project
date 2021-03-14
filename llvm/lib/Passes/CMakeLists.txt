@@ -2,7 +2,7 @@ add_llvm_component_library(LLVMPasses
   PassBuilder.cpp
   PassPlugin.cpp
   StandardInstrumentations.cpp
-  
+
 
   ADDITIONAL_HEADER_DIRS
   ${LLVM_MAIN_INCLUDE_DIR}/llvm
@@ -12,11 +12,11 @@ add_llvm_component_library(LLVMPasses
   intrinsics_gen
 
   LINK_COMPONENTS
+  aanoskovCounter
   AggressiveInstCombine
   Analysis
   Core
   Coroutines
-  HelloNew
   IPO
   InstCombine
   AKomyaginCount
@@ -27,19 +27,27 @@ add_llvm_component_library(LLVMPasses
   Support
   Target
   TransformUtils
+  OksanaKozlova
   Vectorize
   Bogoroditskaya
   PankratovaPass
   IDoroshenkoPass
   Instrumentation
+  Sazanov_Lab1_Pass
+  ArivanovCount
+  ArivanovLab2
+  Strakhovcounter
+  DVorobyovCount
+  Selivanovskaya_lab1
   IlyinPass
   pazamelin
   MelnikovLab1pass
   MoiseevPass
   KovakimyCount
   BaturinaPass
-  VokhmyaninaCounte
+  VokhmyaninaCounter
   VolokhPass
   KatyaMalyshevaLab1Pass
   KatyaMalyshevaLab2Pass
+  CounterPass
   )

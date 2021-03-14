@@ -1,7 +1,7 @@
-//   write a pass Counting: 
-// - only function definitions 
+//   write a pass Counting:
+// - only function definitions
 // - loops
-// - Basic blocks 
+// - Basic blocks
 // - Arithmetic instructions of type add and mull.
 
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
@@ -22,7 +22,7 @@ void countLoopsRecursive(Loop* loop) {
     }
 }
 
-void countLoops(llvm::LoopAnalysis::Result& loops) {
+static void countLoops(llvm::LoopAnalysis::Result& loops) {
     for (LoopInfo::iterator loop = loops.begin(); loop != loops.end(); ++loop) {
         countLoopsRecursive(*loop);
     }
