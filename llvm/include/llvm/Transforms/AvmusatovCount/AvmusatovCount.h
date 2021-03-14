@@ -30,5 +30,5 @@ namespace llvm {
     static bool isRequired() { return true; }
   };
 } // namespace llvm
-
+#undef DEBUG_TYPE
 #endif //LLVM_TRANSFORMS_AVMUSATOVCOUNT_AVMUSATOVCOUNT_H

@@ -9,7 +9,7 @@ STATISTIC(AddsNum, "Number of adds");
 STATISTIC(MulsNum, "Number of muls");
 STATISTIC(LoopsNum, "Number of loops");
 
-void LoopsCount(Loop * loop){
+static void LoopsCount(Loop * loop){
     LoopsNum++;
     for (Loop::iterator curr_loop = loop->begin(); curr_loop != loop->end(); ++curr_loop) {
         LoopsCount(*curr_loop);
@@ -21,8 +21,8 @@ PreservedAnalyses Selivanovskaya_lab1::run(Function &F, FunctionAnalysisManager 
         FuncsNum++;
 
         LoopAnalysis::Result& loops = AM.getResult<LoopAnalysis>(F);
-        for (LoopInfo::iterator loop = loops.begin(); loop != loops.end(); ++loop) { 
-            LoopsCount(*loop); 
+        for (LoopInfo::iterator loop = loops.begin(); loop != loops.end(); ++loop) {
+            LoopsCount(*loop);
         }
 
         for (Function::iterator bb = F.begin(); bb != F.end(); ++bb) {

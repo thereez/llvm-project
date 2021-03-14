@@ -2,6 +2,9 @@
 
 using namespace llvm;
 
+#define DEBUG_TYPE "IlyinPass"
+#include "llvm/ADT/Statistic.h"
+
 STATISTIC(NumbOfFuncs, "Number of functions");
 STATISTIC(NumbOfBasicBlocks, "Number of basic blocks");
 STATISTIC(NumbOfLoops, "Number of loops");
