@@ -251,6 +251,7 @@
 #include "llvm/Transforms/Vectorize/LoopVectorize.h"
 #include "llvm/Transforms/Vectorize/SLPVectorizer.h"
 #include "llvm/Transforms/Vectorize/VectorCombine.h"
+#include "llvm/Transforms/Selivanovskaya_lab2/Selivanovskaya_lab2.h"
 #include "llvm/Transforms/Korkunov_ASpass/Korkunov_ASpass.h"
 #include "llvm/Transforms/Sazanov_Lab1_Pass/Sazanov_Lab1_Pass.h"
 #include "llvm/Transforms/Strakhovcounter/Strakhovcounter.h"
