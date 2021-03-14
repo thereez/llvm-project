@@ -23,13 +23,13 @@ add_llvm_component_library(LLVMPasses
   AKomyaginASPass
   AvmusatovCount
   ObjCARC
+  OksanaKozlova
   PyanzinPass1
   Pyanzin_ASPass
   Scalar
   Support
   Target
   TransformUtils
-  OksanaKozlova
   Vectorize
   Bogoroditskaya
   Bogoroditskaya2

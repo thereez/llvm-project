@@ -140,6 +140,7 @@
 #include "llvm/Transforms/DVorobyovCount/DVorobyovCount.h"
 #include "llvm/Transforms/KovakimyCount/KovakimyCount.h"
 #include "llvm/Transforms/ObjCARC.h"
+#include "llvm/Transforms/OksanaKozlova/OksanaAS.h"
 #include "llvm/Transforms/CounterPass/FirstLab.h"
 #include "llvm/Transforms/VoronovaLab2/VoronovaLab2.h"
 #include "llvm/Transforms/OksanaKozlova/OksanaKozlova.h"
