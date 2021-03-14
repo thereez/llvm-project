@@ -10,7 +10,6 @@ STATISTIC(TotalBasicBlocks, "Num of basic blocks");
 
 
 static void countLoops(Loop * loop){
-
     TotalLoops++;
 
     for (Loop::iterator loopIterator = loop->begin(); loopIterator != loop->end(); ++loopIterator){
