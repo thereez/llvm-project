@@ -154,6 +154,15 @@ the configuration (without a prefix: ``Auto``).
   * ``GNU``
     A style complying with the `GNU coding standards
     <https://www.gnu.org/prep/standards/standards.html>`_
+  * ``InheritParentConfig``
+    Not a real style, but allows to use the ``.clang-format`` file from the
+    parent directory (or its parent if there is none). If there is no parent
+    file found it falls back to the ``fallback`` style, and applies the changes
+    to that.
+
+    With this option you can overwrite some parts of your main style for your
+    subdirectories. This is also possible through the command line, e.g.:
+    ``--style={BasedOnStyle: InheritParentConfig, ColumnLimit: 20}``
 
 .. START_FORMAT_STYLE_OPTIONS
 
@@ -2350,6 +2359,33 @@ the configuration (without a prefix: ``Auto``).
   also being respected in later phase). Without this option set,
   ``ClassImpl.hpp`` would not have the main include file put on top
   before any other include.
+
+**IndentAccessModifiers** (``bool``)
+  Specify whether access modifiers should have their own indentation level.
+
+  When ``false``, access modifiers are indented (or outdented) relative to
+  the record members, respecting the ``AccessModifierOffset``. Record
+  members are indented one level below the record.
+  When ``true``, access modifiers get their own indentation level. As a
+  consequence, record members are indented 2 levels below the record,
+  regardless of the access modifier presence. Value of the
+  ``AccessModifierOffset`` is ignored.
+
+  .. code-block:: c++
+
+     false:                                 true:
+     class C {                      vs.     class C {
+       class D {                                class D {
+         void bar();                                void bar();
+       protected:                                 protected:
+         D();                                       D();
+       };                                       };
+     public:                                  public:
+       C();                                     C();
+     };                                     };
+     void foo() {                           void foo() {
+       return 1;                              return 1;
+     }                                      }
 
 **IndentCaseBlocks** (``bool``)
   Indent case label blocks one level from the case label.

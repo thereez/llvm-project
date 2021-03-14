@@ -424,6 +424,35 @@ CallBase::BundleOpInfo &CallBase::getBundleOpInfoForOperand(unsigned OpIdx) {
   return *Current;
 }
 
+CallBase *CallBase::addOperandBundle(CallBase *CB, uint32_t ID,
+                                     OperandBundleDef OB,
+                                     Instruction *InsertPt) {
+  if (CB->getOperandBundle(ID))
+    return CB;
+
+  SmallVector<OperandBundleDef, 1> Bundles;
+  CB->getOperandBundlesAsDefs(Bundles);
+  Bundles.push_back(OB);
+  return Create(CB, Bundles, InsertPt);
+}
+
+CallBase *CallBase::removeOperandBundle(CallBase *CB, uint32_t ID,
+                                        Instruction *InsertPt) {
+  SmallVector<OperandBundleDef, 1> Bundles;
+  bool CreateNew = false;
+
+  for (unsigned I = 0, E = CB->getNumOperandBundles(); I != E; ++I) {
+    auto Bundle = CB->getOperandBundleAt(I);
+    if (Bundle.getTagID() == ID) {
+      CreateNew = true;
+      continue;
+    }
+    Bundles.emplace_back(Bundle);
+  }
+
+  return CreateNew ? Create(CB, Bundles, InsertPt) : CB;
+}
+
 //===----------------------------------------------------------------------===//
 //                        CallInst Implementation
 //===----------------------------------------------------------------------===//
@@ -2076,13 +2105,13 @@ static bool isSingleSourceMaskImpl(ArrayRef<int> Mask, int NumOpElts) {
   assert(!Mask.empty() && "Shuffle mask must contain elements");
   bool UsesLHS = false;
   bool UsesRHS = false;
-  for (int i = 0, NumMaskElts = Mask.size(); i < NumMaskElts; ++i) {
-    if (Mask[i] == -1)
+  for (int I : Mask) {
+    if (I == -1)
       continue;
-    assert(Mask[i] >= 0 && Mask[i] < (NumOpElts * 2) &&
+    assert(I >= 0 && I < (NumOpElts * 2) &&
            "Out-of-bounds shuffle mask element");
-    UsesLHS |= (Mask[i] < NumOpElts);
-    UsesRHS |= (Mask[i] >= NumOpElts);
+    UsesLHS |= (I < NumOpElts);
+    UsesRHS |= (I >= NumOpElts);
     if (UsesLHS && UsesRHS)
       return false;
   }
