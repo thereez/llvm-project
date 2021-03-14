@@ -3,7 +3,7 @@
 using namespace llvm;
 
 
-void countLoops(const Loop* L) {
+static void countLoops(const Loop* L) {
     totalLoops++;
     auto loops = L->getSubLoops();
     for (auto L = loops.begin(); L != loops.end(); L++) {
