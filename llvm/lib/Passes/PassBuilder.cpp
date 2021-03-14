@@ -225,6 +225,7 @@
 #include "llvm/Transforms/Utils/FixIrreducible.h"
 #include "llvm/Transforms/Utils/HelloWorld.h"
 #include "llvm/Transforms/IlyinPass/IlyinPass.h"
+#include "llvm/Transforms/IlyinPass2/IlyinPass2.h"
 #include "llvm/Transforms/AKomyaginCount/AKomyaginCount.h"
 #include "llvm/Transforms/AKomyaginASPass/AKomyaginASPass.h"
 #include "llvm/Transforms/AvmusatovCount/AvmusatovCount.h"

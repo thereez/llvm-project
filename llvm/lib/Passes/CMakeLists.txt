@@ -45,6 +45,7 @@ add_llvm_component_library(LLVMPasses
   DVorobyovCount
   Selivanovskaya_lab1
   IlyinPass
+  IlyinPass2
   pazamelin
   MelnikovLab1pass
   MelnikovLab2pass
