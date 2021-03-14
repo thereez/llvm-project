@@ -34,6 +34,7 @@ add_llvm_component_library(LLVMPasses
   Bogoroditskaya
   Bogoroditskaya2
   PankratovaPass
+  PankratovaASPass
   IDoroshenkoPass
   Instrumentation
   Selivanovskaya_lab2

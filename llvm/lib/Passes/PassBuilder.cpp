@@ -232,6 +232,7 @@
 #include "llvm/Transforms/PyanzinPass1/PyanzinPass1.h"
 #include "llvm/Transforms/Pyanzin_ASPass/Pyanzin_ASPass.h"
 #include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
+#include "llvm/Transforms/PankratovaASPass/PankratovaASPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
