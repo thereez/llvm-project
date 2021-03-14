@@ -27,6 +27,6 @@ namespace llvm {
         PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
         static bool isRequired(){return true;};
     };
-} 
-
-#endif 
+}
+#undef DEBUG_TYPE
+#endif

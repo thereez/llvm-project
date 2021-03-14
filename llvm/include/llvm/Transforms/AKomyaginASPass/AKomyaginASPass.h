@@ -13,5 +13,5 @@ namespace llvm {
     PreservedAnalyses run(Function& F, FunctionAnalysisManager& AM);
   };
 }
-
+#undef DEBUG_TYPE
 #endif

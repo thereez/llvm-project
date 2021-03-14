@@ -12,7 +12,7 @@
 
 
 namespace llvm {
-  
+
 
 class Selivanovskaya_lab2 : public PassInfoMixin<Selivanovskaya_lab2> {
 public:
@@ -22,3 +22,4 @@ public:
 
 
 }
+#undef DEBUG_TYPE

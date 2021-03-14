@@ -1,6 +1,6 @@
-#include "llvm\Transforms\KatyaMalyshevaLab1Pass\KatyaMalyshevaLab1Pass.h"
+#include "llvm/Transforms/KatyaMalyshevaLab1Pass/KatyaMalyshevaLab1Pass.h"
 
-#define DEBUG_TYPE "KatyaMalyshevaLab1Pass" 
+#define DEBUG_TYPE "KatyaMalyshevaLab1Pass"
 
 using namespace llvm;
 
@@ -10,7 +10,7 @@ STATISTIC(CountBlocks, "Number of basic blocks");
 STATISTIC(CountAdd, "Number of add instructions");
 STATISTIC(CountMul, "Number of mull instructions");
 
-void LoopCounter(Loop *L) {
+static void LoopCounter(Loop *L) {
   CountLoops++;
   for (auto loop = L->begin(); loop != L->end(); ++loop) {
     LoopCounter(*loop);
@@ -19,7 +19,7 @@ void LoopCounter(Loop *L) {
 }
 
 PreservedAnalyses KatyaMalyshevaLab1Pass::run(Function& func, FunctionAnalysisManager& AM) {
-	
+
 
 	if (!func.isDeclaration()) {
 		CountDefinitions++;
@@ -29,16 +29,16 @@ PreservedAnalyses KatyaMalyshevaLab1Pass::run(Function& func, FunctionAnalysisMa
                   LoopCounter(*loop);
                 }
 
-		for (Function::iterator bb = func.begin(); bb != func.end();++bb) { 
+		for (Function::iterator bb = func.begin(); bb != func.end();++bb) {
 			CountBlocks++;
-			for (BasicBlock::iterator ins = bb->begin(); ins != bb->end(); ++ins) {  
-				if (ins->getOpcode() == 14) { 
+			for (BasicBlock::iterator ins = bb->begin(); ins != bb->end(); ++ins) {
+				if (ins->getOpcode() == 14) {
 				  CountAdd++;
 				}
-				else if (ins->getOpcode() == 18){ 
+				else if (ins->getOpcode() == 18){
 				  CountMul++;
 				}
-			
+
 			}
 		}
 	}

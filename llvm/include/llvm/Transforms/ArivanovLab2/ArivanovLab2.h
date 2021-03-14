@@ -22,3 +22,4 @@ public:
 };
 
 }
+#undef DEBUG_TYPE
