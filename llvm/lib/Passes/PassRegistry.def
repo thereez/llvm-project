@@ -355,6 +355,7 @@ FUNCTION_PASS("Strakhovcounter", Strakhovcounter())
 FUNCTION_PASS("aanoskovCounter", aanoskovCounter())
 FUNCTION_PASS("sdanilov", SdanilovPass())   
 FUNCTION_PASS("MelnikovLab1Pass", MelnikovLab1Pass()) // Lab1 pass
+FUNCTION_PASS("MelnikovLab2Pass", MelnikovLab2Pass()) 
 FUNCTION_PASS("MoiseevPass", MoiseevPass())
 FUNCTION_PASS("VolokhPass", VolokhPass())
 FUNCTION_PASS("BaturinaPass", BaturinaPass())
