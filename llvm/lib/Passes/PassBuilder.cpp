@@ -139,6 +139,7 @@
 #include "llvm/Transforms/Instrumentation/ThreadSanitizer.h"
 #include "llvm/Transforms/DVorobyovCount/DVorobyovCount.h"
 #include "llvm/Transforms/KovakimyCount/KovakimyCount.h"
+#include "llvm/Transforms/KovakimyCount/KovakimyAS.h"
 #include "llvm/Transforms/ObjCARC.h"
 #include "llvm/Transforms/OksanaKozlova/OksanaAS.h"
 #include "llvm/Transforms/CounterPass/FirstLab.h"
