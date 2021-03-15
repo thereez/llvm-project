@@ -1,4 +1,5 @@
 add_llvm_component_library(LLVMKovakimyCount
+  KovakimyAS.cpp
   KovakimyCount.cpp
 
   ADDITIONAL_HEADER_DIRS
