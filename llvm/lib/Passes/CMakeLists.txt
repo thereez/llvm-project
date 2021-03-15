@@ -22,6 +22,7 @@ add_llvm_component_library(LLVMPasses
   AKomyaginCount
   AKomyaginASPass
   AvmusatovCount
+  AvmusatovAS
   ObjCARC
   OksanaKozlova
   PyanzinPass1
