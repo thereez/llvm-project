@@ -26,4 +26,5 @@ add_llvm_component_library(LLVMPasses
   Vectorize
   Instrumentation
   BaturinaPass
+  BaturinaPass2
   )
