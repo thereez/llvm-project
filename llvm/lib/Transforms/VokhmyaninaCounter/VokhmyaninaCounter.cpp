@@ -8,7 +8,7 @@ STATISTIC(TotalBasicBlocks, "Number of basic blocks");
 STATISTIC(TotalAdd, "Number of add");
 STATISTIC(TotalMul, "Number of mul");
 
-void countInnerLoops(Loop * loops){
+static void countInnerLoops(Loop * loops){
   TotalLoops++;
   for (Loop::iterator l = loops->begin(), e = loops->end(); l != e; ++l) { countInnerLoops(*l);}
   return;
