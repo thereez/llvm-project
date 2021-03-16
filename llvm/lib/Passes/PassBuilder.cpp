@@ -215,7 +215,7 @@
 #include "llvm/Transforms/Utils/EntryExitInstrumenter.h"
 #include "llvm/Transforms/Utils/FixIrreducible.h"
 #include "llvm/Transforms/Utils/HelloWorld.h"
-#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
+#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass2.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
 #include "llvm/Transforms/Utils/LCSSA.h"

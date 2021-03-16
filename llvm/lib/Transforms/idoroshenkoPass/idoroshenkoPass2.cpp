@@ -4,15 +4,15 @@
 // - Basic blocks 
 // - Arithmetic instructions of type add and mull.
 
-#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
+#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass2.h"
 #include "llvm/IR/InstIterator.h"
 #include "llvm/IR/Instructions.h"
 
-#define DEBUG_TYPE "idoroshenkopass"
+#define DEBUG_TYPE "idoroshenkopass2"
 using namespace llvm;
 
 
-PreservedAnalyses IDoroshenkoPass::run(Function &function, FunctionAnalysisManager &AM) {
+PreservedAnalyses IDoroshenkoPass2::run(Function &function, FunctionAnalysisManager &AM) {
     
     auto pa = PreservedAnalyses::all();
 

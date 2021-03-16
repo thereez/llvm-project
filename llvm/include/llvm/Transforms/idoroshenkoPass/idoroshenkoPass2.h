@@ -1,6 +1,6 @@
 
-#ifndef LLVM_TRANSFORMS_UTILS_IDOROSHENKOPASS_H
-#define LLVM_TRANSFORMS_UTILS_IDOROSHENKOPASS_H
+#ifndef LLVM_TRANSFORMS_UTILS_IDOROSHENKOPASS2_H
+#define LLVM_TRANSFORMS_UTILS_IDOROSHENKOPASS2_H
 
 #include "llvm/IR/PassManager.h"
 #include "llvm/Analysis/LoopAnalysisManager.h"
@@ -10,7 +10,7 @@
 
 namespace llvm {
 
-class IDoroshenkoPass : public PassInfoMixin<IDoroshenkoPass> {
+class IDoroshenkoPass2 : public PassInfoMixin<IDoroshenkoPass2> {
 public:
     PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
     static bool isRequired() { return true; } 
@@ -18,4 +18,4 @@ public:
 
 } // namespace llvm
 
-#endif // LLVM_TRANSFORMS_UTILS_IDOROSHENKOPASS_H
+#endif // LLVM_TRANSFORMS_UTILS_IDOROSHENKOPASS2_H
