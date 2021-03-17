@@ -271,6 +271,8 @@
 #include "llvm/Transforms/BaturinaPass/BaturinaPass.h"
 #include "llvm/Transforms/BaturinaPass2/BaturinaPass2.h"
 #include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
+#include "llvm/Transforms/VokhmyaninaLab2/VokhmyaninaLab2.h"
+
 #include "llvm/Transforms/MoiseevPass2/MoiseevPass2.h"
 #include "llvm/Transforms/VolokhSecondPass/VolokhSecondPass.h"
 
