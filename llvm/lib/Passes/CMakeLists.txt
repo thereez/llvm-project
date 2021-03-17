@@ -56,6 +56,7 @@ add_llvm_component_library(LLVMPasses
   MoiseevPass2
   KovakimyCount
   BaturinaPass
+  BaturinaPass2
   VokhmyaninaCounter
   VokhmyaninaLab2
   VolokhPass
