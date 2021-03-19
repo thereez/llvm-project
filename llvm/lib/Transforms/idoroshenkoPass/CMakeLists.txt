@@ -1,8 +1,10 @@
-add_llvm_component_library( LLVMIDoroshenkoPass2
+add_llvm_component_library( LLVMIDoroshenkoPass
+  idoroshenkoPass.cpp
   idoroshenkoPass2.cpp
 
   ADDITIONAL_HEADER_DIRS
   ${LLVM_MAIN_INCLUDE_DIR}/llvm/Transforms
+  ${LLVM_MAIN_INCLUDE_DIR}/llvm/Transforms/idoroshenkoPass
   ${LLVM_MAIN_INCLUDE_DIR}/llvm/Transforms/idoroshenkoPass2
 
 )
