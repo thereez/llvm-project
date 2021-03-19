@@ -236,6 +236,7 @@
 #include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
 #include "llvm/Transforms/PankratovaASPass/PankratovaASPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
+#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass2.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
 #include "llvm/Transforms/Utils/LCSSA.h"
