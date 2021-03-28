@@ -30,6 +30,7 @@ add_llvm_component_library(LLVMPasses
   Pyanzin_ASPass
   Scalar
   Support
+  solovevaPass
   Target
   TransformUtils
   Vectorize
