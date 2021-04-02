@@ -145,6 +145,7 @@ CGSCC_PASS("no-op-cgscc", NoOpCGSCCPass())
 #ifndef FUNCTION_ANALYSIS
 #define FUNCTION_ANALYSIS(NAME, CREATE_PASS)
 #endif
+FUNCTION_ANALYSIS("PyanzinAnalysis", PyanzinAnalysis())
 FUNCTION_ANALYSIS("aa", AAManager())
 FUNCTION_ANALYSIS("assumptions", AssumptionAnalysis())
 FUNCTION_ANALYSIS("block-freq", BlockFrequencyAnalysis())
@@ -190,6 +191,7 @@ FUNCTION_ALIAS_ANALYSIS("tbaa", TypeBasedAA())
 #ifndef FUNCTION_PASS
 #define FUNCTION_PASS(NAME, CREATE_PASS)
 #endif
+FUNCTION_PASS("pyanzinpass3", PyanzinPass3())
 FUNCTION_PASS("aa-eval", AAEvaluator())
 FUNCTION_PASS("adce", ADCEPass())
 FUNCTION_PASS("add-discriminators", AddDiscriminatorsPass())
@@ -379,6 +381,7 @@ LOOP_ANALYSIS("access-info", LoopAccessAnalysis())
 LOOP_ANALYSIS("ddg", DDGAnalysis())
 LOOP_ANALYSIS("iv-users", IVUsersAnalysis())
 LOOP_ANALYSIS("pass-instrumentation", PassInstrumentationAnalysis(PIC))
+LOOP_ANALYSIS("pyanzinloopanalysis", PyanzinLoopAnalysis())
 #undef LOOP_ANALYSIS
 
 #ifndef LOOP_PASS
