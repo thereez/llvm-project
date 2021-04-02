@@ -146,6 +146,7 @@ CGSCC_PASS("no-op-cgscc", NoOpCGSCCPass())
 #ifndef FUNCTION_ANALYSIS
 #define FUNCTION_ANALYSIS(NAME, CREATE_PASS)
 #endif
+FUNCTION_ANALYSIS("PyanzinAnalysis", PyanzinAnalysis())
 FUNCTION_ANALYSIS("aa", AAManager())
 FUNCTION_ANALYSIS("assumptions", AssumptionAnalysis())
 FUNCTION_ANALYSIS("block-freq", BlockFrequencyAnalysis())
@@ -242,6 +243,7 @@ FUNCTION_PASS("avmusatov-count", AvmusatovCount())
 FUNCTION_PASS("avmusatov-as", AvmusatovAS())
 FUNCTION_PASS("pyanzinpass1", PyanzinPass1())
 FUNCTION_PASS("pyanzin_aspass", Pyanzin_ASPass())
+FUNCTION_PASS("pyanzinpass3", PyanzinPass3())
 FUNCTION_PASS("Bogoroditskaya", Bogoroditskaya())
 FUNCTION_PASS("Bogoroditskaya2", Bogoroditskaya2())
 FUNCTION_PASS("VokhmyaninaCounter", VokhmyaninaCounter())
@@ -458,6 +460,7 @@ LOOP_PASS("guard-widening", GuardWideningPass())
 LOOP_PASS("simple-loop-unswitch", SimpleLoopUnswitchPass())
 LOOP_PASS("loop-reroll", LoopRerollPass())
 LOOP_PASS("loop-versioning-licm", LoopVersioningLICMPass())
+LOOP_ANALYSIS("pyanzinloopanalysis", PyanzinLoopAnalysis())
 #undef LOOP_PASS
 
 #ifndef LOOP_PASS_WITH_PARAMS

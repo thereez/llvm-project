@@ -16,6 +16,8 @@
 
 #include "llvm/Passes/PassBuilder.h"
 #include "llvm/ADT/StringSwitch.h"
+#include "llvm/Analysis/PyanzinAnalysis.h"
+#include "llvm/Analysis/PyanzinLoopAnalysis.h"
 #include "llvm/Analysis/AliasAnalysisEvaluator.h"
 #include "llvm/Analysis/AliasSetTracker.h"
 #include "llvm/Analysis/AssumptionCache.h"
@@ -233,6 +235,7 @@
 #include "llvm/Transforms/AvmusatovAS/AvmusatovAS.h"
 #include "llvm/Transforms/PyanzinPass1/PyanzinPass1.h"
 #include "llvm/Transforms/Pyanzin_ASPass/Pyanzin_ASPass.h"
+#include "llvm/Transforms/PyanzinPass3/PyanzinPass3.h"
 #include "llvm/Transforms/PankratovaPass/PankratovaPass.h"
 #include "llvm/Transforms/PankratovaASPass/PankratovaASPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
