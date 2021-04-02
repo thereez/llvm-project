@@ -41,6 +41,8 @@ PreservedAnalyses IDoroshenkoPass3::run(Function &F, FunctionAnalysisManager &AM
     TotalMul += G.TotalMul;
     TotalPow += G.TotalPow;
 
+    G.print(errs());
+
     auto& LI = AM.getResult<LoopAnalysis>(F);
     auto& LAM = AM.getResult<LoopAnalysisManagerFunctionProxy>(F).getManager();
     

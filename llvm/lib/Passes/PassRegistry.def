@@ -413,7 +413,6 @@ LOOP_PASS("guard-widening", GuardWideningPass())
 LOOP_PASS("simple-loop-unswitch", SimpleLoopUnswitchPass())
 LOOP_PASS("loop-reroll", LoopRerollPass())
 LOOP_PASS("loop-versioning-licm", LoopVersioningLICMPass())
-LOOP_PASS("idoroshenko-loop-vec", IDoroshenkoLoopAnalysis())
 #undef LOOP_PASS
 
 #ifndef LOOP_PASS_WITH_PARAMS

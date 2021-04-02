@@ -27,4 +27,10 @@ IDoroshenkoAnalysis::Result IDoroshenkoAnalysis::run(Function& F, FunctionAnalys
     return result;
 }
 
+void IDoroshenkoAnalysisInfo::print(raw_ostream &OS) const {
+    OS << "Total pow: " << TotalPow << "\n";
+    OS << "Total add: " << TotalAdd << "\n";
+    OS << "Total mul: " << TotalMul << "\n";
+}
+
 }

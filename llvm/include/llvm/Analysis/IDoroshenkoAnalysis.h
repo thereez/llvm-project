@@ -20,6 +20,7 @@ namespace llvm {
 
 class IDoroshenkoAnalysisInfo {
 public:
+    void print(raw_ostream &OS) const;
     int64_t TotalPow = 0;
     int64_t TotalAdd = 0;
     int64_t TotalMul = 0;
