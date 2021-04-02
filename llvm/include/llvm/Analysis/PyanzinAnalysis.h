@@ -18,7 +18,6 @@ public:
   int64_t add_count = 0;
   int64_t mul_count = 0;
   int64_t bb_count = 0;
-  int64_t loop_count = 0;
 };
 
 // Analysis pass
