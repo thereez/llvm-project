@@ -22,7 +22,7 @@ void countLoopsRecursive(Loop* loop) {
     }
 }
 
-void countLoops(llvm::LoopAnalysis::Result& loops) {
+static void countLoops(llvm::LoopAnalysis::Result& loops) {
     for (LoopInfo::iterator loop = loops.begin(); loop != loops.end(); ++loop) {
         countLoopsRecursive(*loop);
     }

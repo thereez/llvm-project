@@ -1,0 +1,22 @@
+#ifndef LLVM_TRANSFORMS_OKSANAKOZLOVA_OKSANAAS_H
+#define LLVM_TRANSFORMS_OKSANAKOZLOVA_OKSANAAS_H
+
+#include "llvm/ADT/SmallVector.h"
+#include "llvm/IR/InstIterator.h"
+#include "llvm/IR/IntrinsicInst.h"
+#include "llvm/IR/Intrinsics.h"
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/IR/PassManager.h"
+#include "llvm/ADT/Statistic.h"
+
+namespace llvm {
+
+class OksanaASPass : public PassInfoMixin<OksanaASPass> {
+public:
+  PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
+  static bool isRequired() { return true; } 
+};
+
+} // namespace llvm
+
+#endif // LLVM_TRANSFORMS_OKSANAKOZLOVA_OKSANAKOZLOVA_H

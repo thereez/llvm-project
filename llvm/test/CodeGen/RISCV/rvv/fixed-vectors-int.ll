@@ -7,8 +7,7 @@
 define void @add_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: add_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vadd.vv v25, v25, v26
@@ -24,8 +23,7 @@ define void @add_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @add_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: add_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vadd.vv v25, v25, v26
@@ -41,8 +39,7 @@ define void @add_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @add_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: add_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vadd.vv v25, v25, v26
@@ -58,8 +55,7 @@ define void @add_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @add_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: add_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vadd.vv v25, v25, v26
@@ -75,8 +71,7 @@ define void @add_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @sub_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: sub_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vsub.vv v25, v25, v26
@@ -92,8 +87,7 @@ define void @sub_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @sub_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: sub_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vsub.vv v25, v25, v26
@@ -109,8 +103,7 @@ define void @sub_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @sub_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: sub_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vsub.vv v25, v25, v26
@@ -126,8 +119,7 @@ define void @sub_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @sub_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: sub_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vsub.vv v25, v25, v26
@@ -143,8 +135,7 @@ define void @sub_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @mul_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: mul_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vmul.vv v25, v25, v26
@@ -160,8 +151,7 @@ define void @mul_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @mul_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: mul_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vmul.vv v25, v25, v26
@@ -177,8 +167,7 @@ define void @mul_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @mul_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: mul_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vmul.vv v25, v25, v26
@@ -194,8 +183,7 @@ define void @mul_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @mul_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: mul_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vmul.vv v25, v25, v26
@@ -211,8 +199,7 @@ define void @mul_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @and_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: and_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vand.vv v25, v25, v26
@@ -228,8 +215,7 @@ define void @and_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @and_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: and_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vand.vv v25, v25, v26
@@ -245,8 +231,7 @@ define void @and_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @and_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: and_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vand.vv v25, v25, v26
@@ -262,8 +247,7 @@ define void @and_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @and_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: and_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vand.vv v25, v25, v26
@@ -279,8 +263,7 @@ define void @and_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @or_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: or_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vor.vv v25, v25, v26
@@ -296,8 +279,7 @@ define void @or_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @or_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: or_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vor.vv v25, v25, v26
@@ -313,8 +295,7 @@ define void @or_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @or_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: or_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vor.vv v25, v25, v26
@@ -330,8 +311,7 @@ define void @or_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @or_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: or_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vor.vv v25, v25, v26
@@ -347,8 +327,7 @@ define void @or_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @xor_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: xor_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vxor.vv v25, v25, v26
@@ -364,8 +343,7 @@ define void @xor_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @xor_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: xor_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vxor.vv v25, v25, v26
@@ -381,8 +359,7 @@ define void @xor_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @xor_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: xor_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vxor.vv v25, v25, v26
@@ -398,8 +375,7 @@ define void @xor_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @xor_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: xor_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vxor.vv v25, v25, v26
@@ -415,8 +391,7 @@ define void @xor_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @lshr_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: lshr_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vsrl.vv v25, v25, v26
@@ -432,8 +407,7 @@ define void @lshr_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @lshr_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: lshr_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vsrl.vv v25, v25, v26
@@ -449,8 +423,7 @@ define void @lshr_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @lshr_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: lshr_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vsrl.vv v25, v25, v26
@@ -466,8 +439,7 @@ define void @lshr_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @lshr_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: lshr_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vsrl.vv v25, v25, v26
@@ -483,8 +455,7 @@ define void @lshr_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @ashr_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: ashr_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vsra.vv v25, v25, v26
@@ -500,8 +471,7 @@ define void @ashr_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @ashr_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: ashr_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vsra.vv v25, v25, v26
@@ -517,8 +487,7 @@ define void @ashr_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @ashr_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: ashr_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vsra.vv v25, v25, v26
@@ -534,8 +503,7 @@ define void @ashr_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @ashr_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: ashr_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vsra.vv v25, v25, v26
@@ -551,8 +519,7 @@ define void @ashr_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @shl_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: shl_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vsll.vv v25, v25, v26
@@ -568,8 +535,7 @@ define void @shl_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @shl_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: shl_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vsll.vv v25, v25, v26
@@ -585,8 +551,7 @@ define void @shl_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @shl_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: shl_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vsll.vv v25, v25, v26
@@ -602,8 +567,7 @@ define void @shl_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @shl_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: shl_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vsll.vv v25, v25, v26
@@ -619,8 +583,7 @@ define void @shl_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @sdiv_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: sdiv_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vdiv.vv v25, v25, v26
@@ -636,8 +599,7 @@ define void @sdiv_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @sdiv_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: sdiv_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vdiv.vv v25, v25, v26
@@ -653,8 +615,7 @@ define void @sdiv_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @sdiv_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: sdiv_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vdiv.vv v25, v25, v26
@@ -670,8 +631,7 @@ define void @sdiv_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @sdiv_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: sdiv_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vdiv.vv v25, v25, v26
@@ -687,8 +647,7 @@ define void @sdiv_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @srem_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: srem_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vrem.vv v25, v25, v26
@@ -704,8 +663,7 @@ define void @srem_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @srem_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: srem_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vrem.vv v25, v25, v26
@@ -721,8 +679,7 @@ define void @srem_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @srem_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: srem_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vrem.vv v25, v25, v26
@@ -738,8 +695,7 @@ define void @srem_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @srem_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: srem_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vrem.vv v25, v25, v26
@@ -755,8 +711,7 @@ define void @srem_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @udiv_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: udiv_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vdivu.vv v25, v25, v26
@@ -772,8 +727,7 @@ define void @udiv_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @udiv_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: udiv_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vdivu.vv v25, v25, v26
@@ -789,8 +743,7 @@ define void @udiv_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @udiv_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: udiv_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vdivu.vv v25, v25, v26
@@ -806,8 +759,7 @@ define void @udiv_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @udiv_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: udiv_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vdivu.vv v25, v25, v26
@@ -823,8 +775,7 @@ define void @udiv_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 define void @urem_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 ; CHECK-LABEL: urem_v16i8:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 16
-; CHECK-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; CHECK-NEXT:    vle8.v v25, (a0)
 ; CHECK-NEXT:    vle8.v v26, (a1)
 ; CHECK-NEXT:    vremu.vv v25, v25, v26
@@ -840,8 +791,7 @@ define void @urem_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
 define void @urem_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 ; CHECK-LABEL: urem_v8i16:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 8
-; CHECK-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; CHECK-NEXT:    vle16.v v25, (a0)
 ; CHECK-NEXT:    vle16.v v26, (a1)
 ; CHECK-NEXT:    vremu.vv v25, v25, v26
@@ -857,8 +807,7 @@ define void @urem_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
 define void @urem_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 ; CHECK-LABEL: urem_v4i32:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 4
-; CHECK-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; CHECK-NEXT:    vle32.v v25, (a0)
 ; CHECK-NEXT:    vle32.v v26, (a1)
 ; CHECK-NEXT:    vremu.vv v25, v25, v26
@@ -874,8 +823,7 @@ define void @urem_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
 define void @urem_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
 ; CHECK-LABEL: urem_v2i64:
 ; CHECK:       # %bb.0:
-; CHECK-NEXT:    addi a2, zero, 2
-; CHECK-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; CHECK-NEXT:    vle64.v v25, (a0)
 ; CHECK-NEXT:    vle64.v v26, (a1)
 ; CHECK-NEXT:    vremu.vv v25, v25, v26
@@ -884,6 +832,542 @@ define void @urem_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
   %a = load <2 x i64>, <2 x i64>* %x
   %b = load <2 x i64>, <2 x i64>* %y
   %c = urem <2 x i64> %a, %b
+  store <2 x i64> %c, <2 x i64>* %x
+  ret void
+}
+
+define void @mulhu_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: mulhu_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    lui a1, %hi(.LCPI52_0)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI52_0)
+; CHECK-NEXT:    vle8.v v26, (a1)
+; CHECK-NEXT:    lui a1, %hi(.LCPI52_1)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI52_1)
+; CHECK-NEXT:    vle8.v v27, (a1)
+; CHECK-NEXT:    vsrl.vv v26, v25, v26
+; CHECK-NEXT:    vmulhu.vv v26, v26, v27
+; CHECK-NEXT:    lui a1, %hi(.LCPI52_2)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI52_2)
+; CHECK-NEXT:    vle8.v v27, (a1)
+; CHECK-NEXT:    lui a1, %hi(.LCPI52_3)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI52_3)
+; CHECK-NEXT:    vle8.v v28, (a1)
+; CHECK-NEXT:    vsub.vv v25, v25, v26
+; CHECK-NEXT:    vmulhu.vv v25, v25, v27
+; CHECK-NEXT:    vadd.vv v25, v25, v26
+; CHECK-NEXT:    vsrl.vv v25, v25, v28
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = udiv <16 x i8> %a, <i8 9, i8 10, i8 11, i8 12, i8 13, i8 14, i8 15, i8 17, i8 18, i8 19, i8 20, i8 21, i8 22, i8 23, i8 24, i8 25>
+  store <16 x i8> %b, <16 x i8>* %x
+  ret void
+}
+
+define void @mulhu_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: mulhu_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    lui a1, %hi(.LCPI53_0)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI53_0)
+; CHECK-NEXT:    vle16.v v26, (a1)
+; CHECK-NEXT:    lui a1, %hi(.LCPI53_1)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI53_1)
+; CHECK-NEXT:    vle16.v v27, (a1)
+; CHECK-NEXT:    vsrl.vv v26, v25, v26
+; CHECK-NEXT:    vmulhu.vv v26, v26, v27
+; CHECK-NEXT:    lui a1, %hi(.LCPI53_2)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI53_2)
+; CHECK-NEXT:    vle16.v v27, (a1)
+; CHECK-NEXT:    lui a1, %hi(.LCPI53_3)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI53_3)
+; CHECK-NEXT:    vle16.v v28, (a1)
+; CHECK-NEXT:    vsub.vv v25, v25, v26
+; CHECK-NEXT:    vmulhu.vv v25, v25, v27
+; CHECK-NEXT:    vadd.vv v25, v25, v26
+; CHECK-NEXT:    vsrl.vv v25, v25, v28
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = udiv <8 x i16> %a, <i16 7, i16 9, i16 10, i16 11, i16 12, i16 13, i16 14, i16 15>
+  store <8 x i16> %b, <8 x i16>* %x
+  ret void
+}
+
+define void @mulhu_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: mulhu_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    lui a1, %hi(.LCPI54_0)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI54_0)
+; CHECK-NEXT:    vle32.v v26, (a1)
+; CHECK-NEXT:    vmulhu.vv v26, v25, v26
+; CHECK-NEXT:    lui a1, %hi(.LCPI54_1)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI54_1)
+; CHECK-NEXT:    vle32.v v27, (a1)
+; CHECK-NEXT:    lui a1, %hi(.LCPI54_2)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI54_2)
+; CHECK-NEXT:    vle32.v v28, (a1)
+; CHECK-NEXT:    vsub.vv v25, v25, v26
+; CHECK-NEXT:    vmulhu.vv v25, v25, v27
+; CHECK-NEXT:    vadd.vv v25, v25, v26
+; CHECK-NEXT:    vsrl.vv v25, v25, v28
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = udiv <4 x i32> %a, <i32 5, i32 6, i32 7, i32 9>
+  store <4 x i32> %b, <4 x i32>* %x
+  ret void
+}
+
+define void @mulhu_v2i64(<2 x i64>* %x) {
+; LMULMAX1-RV32-LABEL: mulhu_v2i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI55_0)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI55_0)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vmulhu.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI55_1)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI55_1)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsrl.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_v2i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, %hi(.LCPI55_0)
+; LMULMAX1-RV64-NEXT:    addi a1, a1, %lo(.LCPI55_0)
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a1)
+; LMULMAX1-RV64-NEXT:    lui a1, %hi(.LCPI55_1)
+; LMULMAX1-RV64-NEXT:    addi a1, a1, %lo(.LCPI55_1)
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a1)
+; LMULMAX1-RV64-NEXT:    vmulhu.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vsrl.vv v25, v25, v27
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = udiv <2 x i64> %a, <i64 3, i64 5>
+  store <2 x i64> %b, <2 x i64>* %x
+  ret void
+}
+
+define void @mulhs_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: mulhs_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    lui a1, %hi(.LCPI56_0)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI56_0)
+; CHECK-NEXT:    vle8.v v26, (a1)
+; CHECK-NEXT:    lui a1, %hi(.LCPI56_1)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI56_1)
+; CHECK-NEXT:    vle8.v v27, (a1)
+; CHECK-NEXT:    vmulhu.vv v25, v25, v26
+; CHECK-NEXT:    vsrl.vv v25, v25, v27
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = udiv <16 x i8> %a, <i8 -9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 -9, i8 9, i8 -9>
+  store <16 x i8> %b, <16 x i8>* %x
+  ret void
+}
+
+define void @mulhs_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: mulhs_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    lui a1, %hi(.LCPI57_0)
+; CHECK-NEXT:    addi a1, a1, %lo(.LCPI57_0)
+; CHECK-NEXT:    vle16.v v26, (a1)
+; CHECK-NEXT:    vmulh.vv v25, v25, v26
+; CHECK-NEXT:    vsra.vi v25, v25, 1
+; CHECK-NEXT:    vsrl.vi v26, v25, 15
+; CHECK-NEXT:    vadd.vv v25, v25, v26
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = sdiv <8 x i16> %a, <i16 -7, i16 7, i16 7, i16 -7, i16 7, i16 -7, i16 -7, i16 7>
+  store <8 x i16> %b, <8 x i16>* %x
+  ret void
+}
+
+define void @mulhs_v4i32(<4 x i32>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_v4i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI58_0)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI58_0)
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vmulh.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vsrl.vi v26, v25, 31
+; LMULMAX1-RV32-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_v4i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, %hi(.LCPI58_0)
+; LMULMAX1-RV64-NEXT:    addi a1, a1, %lo(.LCPI58_0)
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV64-NEXT:    vmulh.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV64-NEXT:    vsrl.vi v26, v25, 31
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = sdiv <4 x i32> %a, <i32 -5, i32 5, i32 -5, i32 5>
+  store <4 x i32> %b, <4 x i32>* %x
+  ret void
+}
+
+define void @mulhs_v2i64(<2 x i64>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_v2i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI59_0)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI59_0)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vmul.vv v26, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI59_1)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI59_1)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vmulh.vv v25, v25, v27
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI59_2)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI59_2)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsrl.vv v26, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI59_3)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI59_3)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsra.vv v25, v25, v27
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_v2i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, %hi(.LCPI59_0)
+; LMULMAX1-RV64-NEXT:    addi a1, a1, %lo(.LCPI59_0)
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a1)
+; LMULMAX1-RV64-NEXT:    lui a1, %hi(.LCPI59_1)
+; LMULMAX1-RV64-NEXT:    addi a1, a1, %lo(.LCPI59_1)
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a1)
+; LMULMAX1-RV64-NEXT:    vmul.vv v26, v25, v26
+; LMULMAX1-RV64-NEXT:    vmulh.vv v25, v25, v27
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    addi a1, zero, 63
+; LMULMAX1-RV64-NEXT:    vsrl.vx v26, v25, a1
+; LMULMAX1-RV64-NEXT:    vid.v v27
+; LMULMAX1-RV64-NEXT:    vsra.vv v25, v25, v27
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = sdiv <2 x i64> %a, <i64 3, i64 -3>
+  store <2 x i64> %b, <2 x i64>* %x
+  ret void
+}
+
+define void @smin_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
+; CHECK-LABEL: smin_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vle8.v v26, (a1)
+; CHECK-NEXT:    vmin.vv v25, v25, v26
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = load <16 x i8>, <16 x i8>* %y
+  %cc = icmp slt <16 x i8> %a, %b
+  %c = select <16 x i1> %cc, <16 x i8> %a, <16 x i8> %b
+  store <16 x i8> %c, <16 x i8>* %x
+  ret void
+}
+
+define void @smin_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
+; CHECK-LABEL: smin_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vle16.v v26, (a1)
+; CHECK-NEXT:    vmin.vv v25, v25, v26
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = load <8 x i16>, <8 x i16>* %y
+  %cc = icmp slt <8 x i16> %a, %b
+  %c = select <8 x i1> %cc, <8 x i16> %a, <8 x i16> %b
+  store <8 x i16> %c, <8 x i16>* %x
+  ret void
+}
+
+define void @smin_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
+; CHECK-LABEL: smin_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vle32.v v26, (a1)
+; CHECK-NEXT:    vmin.vv v25, v25, v26
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = load <4 x i32>, <4 x i32>* %y
+  %cc = icmp slt <4 x i32> %a, %b
+  %c = select <4 x i1> %cc, <4 x i32> %a, <4 x i32> %b
+  store <4 x i32> %c, <4 x i32>* %x
+  ret void
+}
+
+define void @smin_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
+; CHECK-LABEL: smin_v2i64:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; CHECK-NEXT:    vle64.v v25, (a0)
+; CHECK-NEXT:    vle64.v v26, (a1)
+; CHECK-NEXT:    vmin.vv v25, v25, v26
+; CHECK-NEXT:    vse64.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = load <2 x i64>, <2 x i64>* %y
+  %cc = icmp slt <2 x i64> %a, %b
+  %c = select <2 x i1> %cc, <2 x i64> %a, <2 x i64> %b
+  store <2 x i64> %c, <2 x i64>* %x
+  ret void
+}
+
+define void @smax_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
+; CHECK-LABEL: smax_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vle8.v v26, (a1)
+; CHECK-NEXT:    vmax.vv v25, v25, v26
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = load <16 x i8>, <16 x i8>* %y
+  %cc = icmp sgt <16 x i8> %a, %b
+  %c = select <16 x i1> %cc, <16 x i8> %a, <16 x i8> %b
+  store <16 x i8> %c, <16 x i8>* %x
+  ret void
+}
+
+define void @smax_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
+; CHECK-LABEL: smax_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vle16.v v26, (a1)
+; CHECK-NEXT:    vmax.vv v25, v25, v26
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = load <8 x i16>, <8 x i16>* %y
+  %cc = icmp sgt <8 x i16> %a, %b
+  %c = select <8 x i1> %cc, <8 x i16> %a, <8 x i16> %b
+  store <8 x i16> %c, <8 x i16>* %x
+  ret void
+}
+
+define void @smax_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
+; CHECK-LABEL: smax_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vle32.v v26, (a1)
+; CHECK-NEXT:    vmax.vv v25, v25, v26
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = load <4 x i32>, <4 x i32>* %y
+  %cc = icmp sgt <4 x i32> %a, %b
+  %c = select <4 x i1> %cc, <4 x i32> %a, <4 x i32> %b
+  store <4 x i32> %c, <4 x i32>* %x
+  ret void
+}
+
+define void @smax_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
+; CHECK-LABEL: smax_v2i64:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; CHECK-NEXT:    vle64.v v25, (a0)
+; CHECK-NEXT:    vle64.v v26, (a1)
+; CHECK-NEXT:    vmax.vv v25, v25, v26
+; CHECK-NEXT:    vse64.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = load <2 x i64>, <2 x i64>* %y
+  %cc = icmp sgt <2 x i64> %a, %b
+  %c = select <2 x i1> %cc, <2 x i64> %a, <2 x i64> %b
+  store <2 x i64> %c, <2 x i64>* %x
+  ret void
+}
+
+define void @umin_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
+; CHECK-LABEL: umin_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vle8.v v26, (a1)
+; CHECK-NEXT:    vminu.vv v25, v25, v26
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = load <16 x i8>, <16 x i8>* %y
+  %cc = icmp ult <16 x i8> %a, %b
+  %c = select <16 x i1> %cc, <16 x i8> %a, <16 x i8> %b
+  store <16 x i8> %c, <16 x i8>* %x
+  ret void
+}
+
+define void @umin_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
+; CHECK-LABEL: umin_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vle16.v v26, (a1)
+; CHECK-NEXT:    vminu.vv v25, v25, v26
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = load <8 x i16>, <8 x i16>* %y
+  %cc = icmp ult <8 x i16> %a, %b
+  %c = select <8 x i1> %cc, <8 x i16> %a, <8 x i16> %b
+  store <8 x i16> %c, <8 x i16>* %x
+  ret void
+}
+
+define void @umin_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
+; CHECK-LABEL: umin_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vle32.v v26, (a1)
+; CHECK-NEXT:    vminu.vv v25, v25, v26
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = load <4 x i32>, <4 x i32>* %y
+  %cc = icmp ult <4 x i32> %a, %b
+  %c = select <4 x i1> %cc, <4 x i32> %a, <4 x i32> %b
+  store <4 x i32> %c, <4 x i32>* %x
+  ret void
+}
+
+define void @umin_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
+; CHECK-LABEL: umin_v2i64:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; CHECK-NEXT:    vle64.v v25, (a0)
+; CHECK-NEXT:    vle64.v v26, (a1)
+; CHECK-NEXT:    vminu.vv v25, v25, v26
+; CHECK-NEXT:    vse64.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = load <2 x i64>, <2 x i64>* %y
+  %cc = icmp ult <2 x i64> %a, %b
+  %c = select <2 x i1> %cc, <2 x i64> %a, <2 x i64> %b
+  store <2 x i64> %c, <2 x i64>* %x
+  ret void
+}
+
+define void @umax_v16i8(<16 x i8>* %x, <16 x i8>* %y) {
+; CHECK-LABEL: umax_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vle8.v v26, (a1)
+; CHECK-NEXT:    vmaxu.vv v25, v25, v26
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = load <16 x i8>, <16 x i8>* %y
+  %cc = icmp ugt <16 x i8> %a, %b
+  %c = select <16 x i1> %cc, <16 x i8> %a, <16 x i8> %b
+  store <16 x i8> %c, <16 x i8>* %x
+  ret void
+}
+
+define void @umax_v8i16(<8 x i16>* %x, <8 x i16>* %y) {
+; CHECK-LABEL: umax_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vle16.v v26, (a1)
+; CHECK-NEXT:    vmaxu.vv v25, v25, v26
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = load <8 x i16>, <8 x i16>* %y
+  %cc = icmp ugt <8 x i16> %a, %b
+  %c = select <8 x i1> %cc, <8 x i16> %a, <8 x i16> %b
+  store <8 x i16> %c, <8 x i16>* %x
+  ret void
+}
+
+define void @umax_v4i32(<4 x i32>* %x, <4 x i32>* %y) {
+; CHECK-LABEL: umax_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vle32.v v26, (a1)
+; CHECK-NEXT:    vmaxu.vv v25, v25, v26
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = load <4 x i32>, <4 x i32>* %y
+  %cc = icmp ugt <4 x i32> %a, %b
+  %c = select <4 x i1> %cc, <4 x i32> %a, <4 x i32> %b
+  store <4 x i32> %c, <4 x i32>* %x
+  ret void
+}
+
+define void @umax_v2i64(<2 x i64>* %x, <2 x i64>* %y) {
+; CHECK-LABEL: umax_v2i64:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; CHECK-NEXT:    vle64.v v25, (a0)
+; CHECK-NEXT:    vle64.v v26, (a1)
+; CHECK-NEXT:    vmaxu.vv v25, v25, v26
+; CHECK-NEXT:    vse64.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = load <2 x i64>, <2 x i64>* %y
+  %cc = icmp ugt <2 x i64> %a, %b
+  %c = select <2 x i1> %cc, <2 x i64> %a, <2 x i64> %b
   store <2 x i64> %c, <2 x i64>* %x
   ret void
 }
@@ -901,8 +1385,7 @@ define void @add_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: add_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -917,8 +1400,7 @@ define void @add_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: add_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -940,8 +1422,7 @@ define void @add_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @add_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: add_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
@@ -950,8 +1431,7 @@ define void @add_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: add_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -966,8 +1446,7 @@ define void @add_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: add_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -989,8 +1468,7 @@ define void @add_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @add_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: add_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
@@ -999,8 +1477,7 @@ define void @add_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: add_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -1015,8 +1492,7 @@ define void @add_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: add_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -1038,8 +1514,7 @@ define void @add_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @add_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: add_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
@@ -1048,8 +1523,7 @@ define void @add_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: add_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -1064,8 +1538,7 @@ define void @add_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: add_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -1097,8 +1570,7 @@ define void @sub_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sub_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -1113,8 +1585,7 @@ define void @sub_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sub_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -1136,8 +1607,7 @@ define void @sub_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @sub_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: sub_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vsub.vv v26, v26, v28
@@ -1146,8 +1616,7 @@ define void @sub_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sub_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -1162,8 +1631,7 @@ define void @sub_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sub_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -1185,8 +1653,7 @@ define void @sub_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @sub_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: sub_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vsub.vv v26, v26, v28
@@ -1195,8 +1662,7 @@ define void @sub_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sub_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -1211,8 +1677,7 @@ define void @sub_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sub_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -1234,8 +1699,7 @@ define void @sub_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @sub_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: sub_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vsub.vv v26, v26, v28
@@ -1244,8 +1708,7 @@ define void @sub_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sub_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -1260,8 +1723,7 @@ define void @sub_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sub_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -1293,8 +1755,7 @@ define void @mul_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: mul_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -1309,8 +1770,7 @@ define void @mul_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: mul_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -1332,8 +1792,7 @@ define void @mul_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @mul_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: mul_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vmul.vv v26, v26, v28
@@ -1342,8 +1801,7 @@ define void @mul_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: mul_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -1358,8 +1816,7 @@ define void @mul_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: mul_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -1381,8 +1838,7 @@ define void @mul_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @mul_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: mul_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vmul.vv v26, v26, v28
@@ -1391,8 +1847,7 @@ define void @mul_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: mul_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -1407,8 +1862,7 @@ define void @mul_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: mul_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -1430,8 +1884,7 @@ define void @mul_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @mul_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: mul_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vmul.vv v26, v26, v28
@@ -1440,8 +1893,7 @@ define void @mul_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: mul_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -1456,8 +1908,7 @@ define void @mul_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: mul_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -1489,8 +1940,7 @@ define void @and_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: and_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -1505,8 +1955,7 @@ define void @and_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: and_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -1528,8 +1977,7 @@ define void @and_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @and_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: and_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vand.vv v26, v26, v28
@@ -1538,8 +1986,7 @@ define void @and_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: and_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -1554,8 +2001,7 @@ define void @and_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: and_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -1577,8 +2023,7 @@ define void @and_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @and_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: and_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vand.vv v26, v26, v28
@@ -1587,8 +2032,7 @@ define void @and_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: and_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -1603,8 +2047,7 @@ define void @and_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: and_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -1626,8 +2069,7 @@ define void @and_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @and_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: and_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vand.vv v26, v26, v28
@@ -1636,8 +2078,7 @@ define void @and_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: and_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -1652,8 +2093,7 @@ define void @and_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: and_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -1685,8 +2125,7 @@ define void @or_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: or_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -1701,8 +2140,7 @@ define void @or_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: or_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -1724,8 +2162,7 @@ define void @or_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @or_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: or_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vor.vv v26, v26, v28
@@ -1734,8 +2171,7 @@ define void @or_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: or_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -1750,8 +2186,7 @@ define void @or_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: or_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -1773,8 +2208,7 @@ define void @or_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @or_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: or_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vor.vv v26, v26, v28
@@ -1783,8 +2217,7 @@ define void @or_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: or_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -1799,8 +2232,7 @@ define void @or_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: or_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -1822,8 +2254,7 @@ define void @or_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @or_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: or_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vor.vv v26, v26, v28
@@ -1832,8 +2263,7 @@ define void @or_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: or_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -1848,8 +2278,7 @@ define void @or_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: or_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -1881,8 +2310,7 @@ define void @xor_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: xor_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -1897,8 +2325,7 @@ define void @xor_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: xor_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -1920,8 +2347,7 @@ define void @xor_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @xor_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: xor_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vxor.vv v26, v26, v28
@@ -1930,8 +2356,7 @@ define void @xor_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: xor_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -1946,8 +2371,7 @@ define void @xor_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: xor_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -1969,8 +2393,7 @@ define void @xor_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @xor_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: xor_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vxor.vv v26, v26, v28
@@ -1979,8 +2402,7 @@ define void @xor_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: xor_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -1995,8 +2417,7 @@ define void @xor_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: xor_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -2018,8 +2439,7 @@ define void @xor_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @xor_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: xor_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vxor.vv v26, v26, v28
@@ -2028,8 +2448,7 @@ define void @xor_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: xor_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -2044,8 +2463,7 @@ define void @xor_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: xor_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -2077,8 +2495,7 @@ define void @lshr_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: lshr_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -2093,8 +2510,7 @@ define void @lshr_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: lshr_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -2116,8 +2532,7 @@ define void @lshr_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @lshr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: lshr_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vsrl.vv v26, v26, v28
@@ -2126,8 +2541,7 @@ define void @lshr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: lshr_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -2142,8 +2556,7 @@ define void @lshr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: lshr_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -2165,8 +2578,7 @@ define void @lshr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @lshr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: lshr_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vsrl.vv v26, v26, v28
@@ -2175,8 +2587,7 @@ define void @lshr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: lshr_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -2191,8 +2602,7 @@ define void @lshr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: lshr_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -2214,8 +2624,7 @@ define void @lshr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @lshr_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: lshr_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vsrl.vv v26, v26, v28
@@ -2224,8 +2633,7 @@ define void @lshr_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: lshr_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -2240,8 +2648,7 @@ define void @lshr_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: lshr_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -2273,8 +2680,7 @@ define void @ashr_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: ashr_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -2289,8 +2695,7 @@ define void @ashr_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: ashr_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -2312,8 +2717,7 @@ define void @ashr_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @ashr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: ashr_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vsra.vv v26, v26, v28
@@ -2322,8 +2726,7 @@ define void @ashr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: ashr_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -2338,8 +2741,7 @@ define void @ashr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: ashr_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -2361,8 +2763,7 @@ define void @ashr_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @ashr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: ashr_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vsra.vv v26, v26, v28
@@ -2371,8 +2772,7 @@ define void @ashr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: ashr_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -2387,8 +2787,7 @@ define void @ashr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: ashr_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -2410,8 +2809,7 @@ define void @ashr_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @ashr_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: ashr_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vsra.vv v26, v26, v28
@@ -2420,8 +2818,7 @@ define void @ashr_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: ashr_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -2436,8 +2833,7 @@ define void @ashr_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: ashr_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -2469,8 +2865,7 @@ define void @shl_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: shl_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -2485,8 +2880,7 @@ define void @shl_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: shl_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -2508,8 +2902,7 @@ define void @shl_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @shl_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: shl_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vsll.vv v26, v26, v28
@@ -2518,8 +2911,7 @@ define void @shl_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: shl_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -2534,8 +2926,7 @@ define void @shl_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: shl_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -2557,8 +2948,7 @@ define void @shl_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @shl_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: shl_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vsll.vv v26, v26, v28
@@ -2567,8 +2957,7 @@ define void @shl_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: shl_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -2583,8 +2972,7 @@ define void @shl_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: shl_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -2606,8 +2994,7 @@ define void @shl_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @shl_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: shl_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vsll.vv v26, v26, v28
@@ -2616,8 +3003,7 @@ define void @shl_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: shl_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -2632,8 +3018,7 @@ define void @shl_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: shl_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -2665,8 +3050,7 @@ define void @sdiv_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sdiv_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -2681,8 +3065,7 @@ define void @sdiv_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sdiv_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -2704,8 +3087,7 @@ define void @sdiv_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @sdiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: sdiv_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vdiv.vv v26, v26, v28
@@ -2714,8 +3096,7 @@ define void @sdiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sdiv_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -2730,8 +3111,7 @@ define void @sdiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sdiv_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -2753,8 +3133,7 @@ define void @sdiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @sdiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: sdiv_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vdiv.vv v26, v26, v28
@@ -2763,8 +3142,7 @@ define void @sdiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sdiv_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -2779,8 +3157,7 @@ define void @sdiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sdiv_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -2802,8 +3179,7 @@ define void @sdiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @sdiv_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: sdiv_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vdiv.vv v26, v26, v28
@@ -2812,8 +3188,7 @@ define void @sdiv_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: sdiv_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -2828,8 +3203,7 @@ define void @sdiv_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: sdiv_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -2861,8 +3235,7 @@ define void @srem_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: srem_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -2877,8 +3250,7 @@ define void @srem_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: srem_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -2900,8 +3272,7 @@ define void @srem_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @srem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: srem_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vrem.vv v26, v26, v28
@@ -2910,8 +3281,7 @@ define void @srem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: srem_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -2926,8 +3296,7 @@ define void @srem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: srem_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -2949,8 +3318,7 @@ define void @srem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @srem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: srem_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vrem.vv v26, v26, v28
@@ -2959,8 +3327,7 @@ define void @srem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: srem_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -2975,8 +3342,7 @@ define void @srem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: srem_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -2998,8 +3364,7 @@ define void @srem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @srem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: srem_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vrem.vv v26, v26, v28
@@ -3008,8 +3373,7 @@ define void @srem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: srem_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -3024,8 +3388,7 @@ define void @srem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: srem_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -3057,8 +3420,7 @@ define void @udiv_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: udiv_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -3073,8 +3435,7 @@ define void @udiv_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: udiv_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -3096,8 +3457,7 @@ define void @udiv_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @udiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: udiv_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vdivu.vv v26, v26, v28
@@ -3106,8 +3466,7 @@ define void @udiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: udiv_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -3122,8 +3481,7 @@ define void @udiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: udiv_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -3145,8 +3503,7 @@ define void @udiv_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @udiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: udiv_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vdivu.vv v26, v26, v28
@@ -3155,8 +3512,7 @@ define void @udiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: udiv_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -3171,8 +3527,7 @@ define void @udiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: udiv_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -3194,8 +3549,7 @@ define void @udiv_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @udiv_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: udiv_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vdivu.vv v26, v26, v28
@@ -3204,8 +3558,7 @@ define void @udiv_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: udiv_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -3220,8 +3573,7 @@ define void @udiv_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: udiv_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -3253,8 +3605,7 @@ define void @urem_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: urem_v32i8:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
@@ -3269,8 +3620,7 @@ define void @urem_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: urem_v32i8:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 16
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
@@ -3292,8 +3642,7 @@ define void @urem_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
 define void @urem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ; LMULMAX2-LABEL: urem_v16i16:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 16
-; LMULMAX2-NEXT:    vsetvli a2, a2, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
 ; LMULMAX2-NEXT:    vle16.v v26, (a0)
 ; LMULMAX2-NEXT:    vle16.v v28, (a1)
 ; LMULMAX2-NEXT:    vremu.vv v26, v26, v28
@@ -3302,8 +3651,7 @@ define void @urem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: urem_v16i16:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
@@ -3318,8 +3666,7 @@ define void @urem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: urem_v16i16:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 8
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
@@ -3341,8 +3688,7 @@ define void @urem_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
 define void @urem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ; LMULMAX2-LABEL: urem_v8i32:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 8
-; LMULMAX2-NEXT:    vsetvli a2, a2, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
 ; LMULMAX2-NEXT:    vle32.v v26, (a0)
 ; LMULMAX2-NEXT:    vle32.v v28, (a1)
 ; LMULMAX2-NEXT:    vremu.vv v26, v26, v28
@@ -3351,8 +3697,7 @@ define void @urem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: urem_v8i32:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
@@ -3367,8 +3712,7 @@ define void @urem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: urem_v8i32:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 4
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
@@ -3390,8 +3734,7 @@ define void @urem_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
 define void @urem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: urem_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a2, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
 ; LMULMAX2-NEXT:    vremu.vv v26, v26, v28
@@ -3400,8 +3743,7 @@ define void @urem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV32-LABEL: urem_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
@@ -3416,8 +3758,7 @@ define void @urem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ;
 ; LMULMAX1-RV64-LABEL: urem_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a2, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
 ; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
@@ -3439,47 +3780,44 @@ define void @urem_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 define void @extract_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 ; LMULMAX2-LABEL: extract_v4i64:
 ; LMULMAX2:       # %bb.0:
-; LMULMAX2-NEXT:    addi a2, zero, 4
-; LMULMAX2-NEXT:    vsetvli a3, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vle64.v v26, (a0)
 ; LMULMAX2-NEXT:    vle64.v v28, (a1)
-; LMULMAX2-NEXT:    vsetvli a1, a2, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vsetivli a1, 4, e64,m2,ta,mu
 ; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
 ; LMULMAX2-NEXT:    vse64.v v26, (a0)
 ; LMULMAX2-NEXT:    ret
 ;
 ; LMULMAX1-RV32-LABEL: extract_v4i64:
 ; LMULMAX1-RV32:       # %bb.0:
-; LMULMAX1-RV32-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV32-NEXT:    vsetvli a3, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
-; LMULMAX1-RV32-NEXT:    addi a3, a0, 16
-; LMULMAX1-RV32-NEXT:    vle64.v v26, (a3)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
 ; LMULMAX1-RV32-NEXT:    vle64.v v27, (a1)
 ; LMULMAX1-RV32-NEXT:    addi a1, a1, 16
 ; LMULMAX1-RV32-NEXT:    vle64.v v28, (a1)
-; LMULMAX1-RV32-NEXT:    vsetvli a1, a2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
 ; LMULMAX1-RV32-NEXT:    vadd.vv v26, v26, v28
 ; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v27
 ; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
-; LMULMAX1-RV32-NEXT:    vse64.v v26, (a3)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a2)
 ; LMULMAX1-RV32-NEXT:    ret
 ;
 ; LMULMAX1-RV64-LABEL: extract_v4i64:
 ; LMULMAX1-RV64:       # %bb.0:
-; LMULMAX1-RV64-NEXT:    addi a2, zero, 2
-; LMULMAX1-RV64-NEXT:    vsetvli a3, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
-; LMULMAX1-RV64-NEXT:    addi a3, a0, 16
-; LMULMAX1-RV64-NEXT:    vle64.v v26, (a3)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
 ; LMULMAX1-RV64-NEXT:    vle64.v v27, (a1)
 ; LMULMAX1-RV64-NEXT:    addi a1, a1, 16
 ; LMULMAX1-RV64-NEXT:    vle64.v v28, (a1)
-; LMULMAX1-RV64-NEXT:    vsetvli a1, a2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
 ; LMULMAX1-RV64-NEXT:    vadd.vv v26, v26, v28
 ; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v27
 ; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
-; LMULMAX1-RV64-NEXT:    vse64.v v26, (a3)
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a2)
 ; LMULMAX1-RV64-NEXT:    ret
   %a = load <4 x i64>, <4 x i64>* %x
   %b = load <4 x i64>, <4 x i64>* %y
@@ -3487,5 +3825,2996 @@ define void @extract_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
 "compute":
   %c = add <4 x i64> %a, %b
   store <4 x i64> %c, <4 x i64>* %x
+  ret void
+}
+
+define void @mulhu_v32i8(<32 x i8>* %x) {
+; LMULMAX2-LABEL: mulhu_v32i8:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    addi a1, zero, 32
+; LMULMAX2-NEXT:    vsetvli a1, a1, e8,m2,ta,mu
+; LMULMAX2-NEXT:    vle8.v v26, (a0)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI129_0)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI129_0)
+; LMULMAX2-NEXT:    vle8.v v28, (a1)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI129_1)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI129_1)
+; LMULMAX2-NEXT:    vle8.v v30, (a1)
+; LMULMAX2-NEXT:    vsrl.vv v28, v26, v28
+; LMULMAX2-NEXT:    vmulhu.vv v28, v28, v30
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI129_2)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI129_2)
+; LMULMAX2-NEXT:    vle8.v v30, (a1)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI129_3)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI129_3)
+; LMULMAX2-NEXT:    vle8.v v8, (a1)
+; LMULMAX2-NEXT:    vsub.vv v26, v26, v28
+; LMULMAX2-NEXT:    vmulhu.vv v26, v26, v30
+; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
+; LMULMAX2-NEXT:    vsrl.vv v26, v26, v8
+; LMULMAX2-NEXT:    vse8.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: mulhu_v32i8:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI129_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI129_0)
+; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    vle8.v v27, (a0)
+; LMULMAX1-RV32-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vse8.v v26, (a0)
+; LMULMAX1-RV32-NEXT:    vse8.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_v32i8:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI129_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI129_0)
+; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    vle8.v v27, (a0)
+; LMULMAX1-RV64-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vse8.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse8.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <32 x i8>, <32 x i8>* %x
+  %b = udiv <32 x i8> %a, <i8 9, i8 10, i8 11, i8 12, i8 13, i8 14, i8 15, i8 17, i8 18, i8 19, i8 20, i8 21, i8 22, i8 23, i8 24, i8 25, i8 9, i8 10, i8 11, i8 12, i8 13, i8 14, i8 15, i8 17, i8 18, i8 19, i8 20, i8 21, i8 22, i8 23, i8 24, i8 25>
+  store <32 x i8> %b, <32 x i8>* %x
+  ret void
+}
+
+define void @mulhu_v16i16(<16 x i16>* %x) {
+; LMULMAX2-LABEL: mulhu_v16i16:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a1, 16, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vle16.v v26, (a0)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI130_0)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI130_0)
+; LMULMAX2-NEXT:    vle16.v v28, (a1)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI130_1)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI130_1)
+; LMULMAX2-NEXT:    vle16.v v30, (a1)
+; LMULMAX2-NEXT:    vsrl.vv v28, v26, v28
+; LMULMAX2-NEXT:    vmulhu.vv v28, v28, v30
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI130_2)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI130_2)
+; LMULMAX2-NEXT:    vle16.v v30, (a1)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI130_3)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI130_3)
+; LMULMAX2-NEXT:    vle16.v v8, (a1)
+; LMULMAX2-NEXT:    vsub.vv v26, v26, v28
+; LMULMAX2-NEXT:    vmulhu.vv v26, v26, v30
+; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
+; LMULMAX2-NEXT:    vsrl.vv v26, v26, v8
+; LMULMAX2-NEXT:    vse16.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: mulhu_v16i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI130_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI130_0)
+; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    vle16.v v27, (a0)
+; LMULMAX1-RV32-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vse16.v v26, (a0)
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_v16i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI130_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI130_0)
+; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    vle16.v v27, (a0)
+; LMULMAX1-RV64-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vse16.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <16 x i16>, <16 x i16>* %x
+  %b = udiv <16 x i16> %a, <i16 7, i16 9, i16 10, i16 11, i16 12, i16 13, i16 14, i16 15, i16 7, i16 9, i16 10, i16 11, i16 12, i16 13, i16 14, i16 15>
+  store <16 x i16> %b, <16 x i16>* %x
+  ret void
+}
+
+define void @mulhu_v8i32(<8 x i32>* %x) {
+; LMULMAX2-LABEL: mulhu_v8i32:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a1, 8, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vle32.v v26, (a0)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI131_0)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI131_0)
+; LMULMAX2-NEXT:    vle32.v v28, (a1)
+; LMULMAX2-NEXT:    vmulhu.vv v28, v26, v28
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI131_1)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI131_1)
+; LMULMAX2-NEXT:    vle32.v v30, (a1)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI131_2)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI131_2)
+; LMULMAX2-NEXT:    vle32.v v8, (a1)
+; LMULMAX2-NEXT:    vsub.vv v26, v26, v28
+; LMULMAX2-NEXT:    vmulhu.vv v26, v26, v30
+; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
+; LMULMAX2-NEXT:    vsrl.vv v26, v26, v8
+; LMULMAX2-NEXT:    vse32.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: mulhu_v8i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI131_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI131_0)
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a0)
+; LMULMAX1-RV32-NEXT:    vmulhu.vv v28, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI131_1)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI131_1)
+; LMULMAX1-RV32-NEXT:    vle32.v v29, (a2)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI131_2)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI131_2)
+; LMULMAX1-RV32-NEXT:    vle32.v v30, (a2)
+; LMULMAX1-RV32-NEXT:    vsub.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vmulhu.vv v25, v25, v29
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vsrl.vv v25, v25, v30
+; LMULMAX1-RV32-NEXT:    vmulhu.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vsub.vv v27, v27, v26
+; LMULMAX1-RV32-NEXT:    vmulhu.vv v27, v27, v29
+; LMULMAX1-RV32-NEXT:    vadd.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vsrl.vv v26, v26, v30
+; LMULMAX1-RV32-NEXT:    vse32.v v26, (a0)
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_v8i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI131_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI131_0)
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    vle32.v v27, (a0)
+; LMULMAX1-RV64-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vse32.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i32>, <8 x i32>* %x
+  %b = udiv <8 x i32> %a, <i32 5, i32 6, i32 7, i32 9, i32 5, i32 6, i32 7, i32 9>
+  store <8 x i32> %b, <8 x i32>* %x
+  ret void
+}
+
+define void @mulhu_v4i64(<4 x i64>* %x) {
+; LMULMAX1-RV32-LABEL: mulhu_v4i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI132_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI132_0)
+; LMULMAX1-RV32-NEXT:    vsetivli a3, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vdivu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI132_1)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI132_1)
+; LMULMAX1-RV32-NEXT:    vsetivli a3, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vdivu.vv v25, v25, v27
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_v4i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI132_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI132_0)
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI132_1)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI132_1)
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle64.v v28, (a0)
+; LMULMAX1-RV64-NEXT:    vmulhu.vv v26, v25, v26
+; LMULMAX1-RV64-NEXT:    vsub.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vmulhu.vv v25, v25, v27
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI132_2)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI132_2)
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI132_3)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI132_3)
+; LMULMAX1-RV64-NEXT:    vle64.v v29, (a2)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI132_4)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI132_4)
+; LMULMAX1-RV64-NEXT:    vle64.v v30, (a2)
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vsrl.vv v25, v25, v27
+; LMULMAX1-RV64-NEXT:    vmulhu.vv v26, v28, v29
+; LMULMAX1-RV64-NEXT:    vsrl.vv v26, v26, v30
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i64>, <4 x i64>* %x
+  %b = udiv <4 x i64> %a, <i64 3, i64 5, i64 7, i64 9>
+  store <4 x i64> %b, <4 x i64>* %x
+  ret void
+}
+
+define void @mulhs_v32i8(<32 x i8>* %x) {
+; LMULMAX2-LABEL: mulhs_v32i8:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    addi a1, zero, 32
+; LMULMAX2-NEXT:    vsetvli a1, a1, e8,m2,ta,mu
+; LMULMAX2-NEXT:    vle8.v v26, (a0)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI133_0)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI133_0)
+; LMULMAX2-NEXT:    vle8.v v28, (a1)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI133_1)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI133_1)
+; LMULMAX2-NEXT:    vle8.v v30, (a1)
+; LMULMAX2-NEXT:    vmulhu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vsrl.vv v26, v26, v30
+; LMULMAX2-NEXT:    vse8.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: mulhs_v32i8:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI133_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI133_0)
+; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    vle8.v v27, (a0)
+; LMULMAX1-RV32-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vse8.v v26, (a0)
+; LMULMAX1-RV32-NEXT:    vse8.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_v32i8:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI133_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI133_0)
+; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    vle8.v v27, (a0)
+; LMULMAX1-RV64-NEXT:    vdivu.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vdivu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vse8.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse8.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <32 x i8>, <32 x i8>* %x
+  %b = udiv <32 x i8> %a, <i8 -9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 -9, i8 9, i8 -9, i8 -9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 -9, i8 9, i8 -9, i8 9, i8 -9, i8 -9, i8 9, i8 -9>
+  store <32 x i8> %b, <32 x i8>* %x
+  ret void
+}
+
+define void @mulhs_v16i16(<16 x i16>* %x) {
+; LMULMAX2-LABEL: mulhs_v16i16:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a1, 16, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vle16.v v26, (a0)
+; LMULMAX2-NEXT:    lui a1, %hi(.LCPI134_0)
+; LMULMAX2-NEXT:    addi a1, a1, %lo(.LCPI134_0)
+; LMULMAX2-NEXT:    vle16.v v28, (a1)
+; LMULMAX2-NEXT:    vmulh.vv v26, v26, v28
+; LMULMAX2-NEXT:    vsra.vi v26, v26, 1
+; LMULMAX2-NEXT:    vsrl.vi v28, v26, 15
+; LMULMAX2-NEXT:    vadd.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse16.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: mulhs_v16i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI134_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI134_0)
+; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    vle16.v v27, (a0)
+; LMULMAX1-RV32-NEXT:    vdiv.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vdiv.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vse16.v v26, (a0)
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_v16i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI134_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI134_0)
+; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    vle16.v v27, (a0)
+; LMULMAX1-RV64-NEXT:    vdiv.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vdiv.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vse16.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <16 x i16>, <16 x i16>* %x
+  %b = sdiv <16 x i16> %a, <i16 -7, i16 7, i16 7, i16 -7, i16 7, i16 -7, i16 -7, i16 7, i16 -7, i16 7, i16 7, i16 -7, i16 7, i16 -7, i16 -7, i16 7>
+  store <16 x i16> %b, <16 x i16>* %x
+  ret void
+}
+
+define void @mulhs_v8i32(<8 x i32>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_v8i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI135_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI135_0)
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a0)
+; LMULMAX1-RV32-NEXT:    vmulh.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vsrl.vi v28, v25, 31
+; LMULMAX1-RV32-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vmulh.vv v26, v27, v26
+; LMULMAX1-RV32-NEXT:    vsrl.vi v27, v26, 31
+; LMULMAX1-RV32-NEXT:    vsra.vi v26, v26, 1
+; LMULMAX1-RV32-NEXT:    vadd.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vse32.v v26, (a0)
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_v8i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI135_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI135_0)
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    vle32.v v27, (a0)
+; LMULMAX1-RV64-NEXT:    vdiv.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vdiv.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vse32.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i32>, <8 x i32>* %x
+  %b = sdiv <8 x i32> %a, <i32 -5, i32 5, i32 -5, i32 5, i32 -5, i32 5, i32 -5, i32 5>
+  store <8 x i32> %b, <8 x i32>* %x
+  ret void
+}
+
+define void @mulhs_v4i64(<4 x i64>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_v4i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    lui a2, %hi(.LCPI136_0)
+; LMULMAX1-RV32-NEXT:    addi a2, a2, %lo(.LCPI136_0)
+; LMULMAX1-RV32-NEXT:    vsetivli a3, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vdiv.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vdiv.vv v25, v25, v27
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_v4i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    addi a1, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI136_0)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI136_0)
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    lui a2, %hi(.LCPI136_1)
+; LMULMAX1-RV64-NEXT:    addi a2, a2, %lo(.LCPI136_1)
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle64.v v28, (a0)
+; LMULMAX1-RV64-NEXT:    vmul.vv v29, v25, v26
+; LMULMAX1-RV64-NEXT:    vmulh.vv v25, v25, v27
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v29
+; LMULMAX1-RV64-NEXT:    addi a2, zero, 63
+; LMULMAX1-RV64-NEXT:    vsrl.vx v29, v25, a2
+; LMULMAX1-RV64-NEXT:    vid.v v30
+; LMULMAX1-RV64-NEXT:    vsra.vv v25, v25, v30
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v29
+; LMULMAX1-RV64-NEXT:    vmul.vv v26, v28, v26
+; LMULMAX1-RV64-NEXT:    vmulh.vv v27, v28, v27
+; LMULMAX1-RV64-NEXT:    vadd.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vsrl.vx v27, v26, a2
+; LMULMAX1-RV64-NEXT:    vsra.vv v26, v26, v30
+; LMULMAX1-RV64-NEXT:    vadd.vv v26, v26, v27
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a0)
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a1)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i64>, <4 x i64>* %x
+  %b = sdiv <4 x i64> %a, <i64 3, i64 -3, i64 3, i64 -3>
+  store <4 x i64> %b, <4 x i64>* %x
+  ret void
+}
+
+define void @smin_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
+; LMULMAX2-LABEL: smin_v32i8:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    addi a2, zero, 32
+; LMULMAX2-NEXT:    vsetvli a2, a2, e8,m2,ta,mu
+; LMULMAX2-NEXT:    vle8.v v26, (a0)
+; LMULMAX2-NEXT:    vle8.v v28, (a1)
+; LMULMAX2-NEXT:    vmin.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse8.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smin_v32i8:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmin.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smin_v32i8:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmin.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <32 x i8>, <32 x i8>* %x
+  %b = load <32 x i8>, <32 x i8>* %y
+  %cc = icmp slt <32 x i8> %a, %b
+  %c = select <32 x i1> %cc, <32 x i8> %a, <32 x i8> %b
+  store <32 x i8> %c, <32 x i8>* %x
+  ret void
+}
+
+define void @smin_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
+; LMULMAX2-LABEL: smin_v16i16:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vle16.v v26, (a0)
+; LMULMAX2-NEXT:    vle16.v v28, (a1)
+; LMULMAX2-NEXT:    vmin.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse16.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smin_v16i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmin.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smin_v16i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmin.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <16 x i16>, <16 x i16>* %x
+  %b = load <16 x i16>, <16 x i16>* %y
+  %cc = icmp slt <16 x i16> %a, %b
+  %c = select <16 x i1> %cc, <16 x i16> %a, <16 x i16> %b
+  store <16 x i16> %c, <16 x i16>* %x
+  ret void
+}
+
+define void @smin_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
+; LMULMAX2-LABEL: smin_v8i32:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vle32.v v26, (a0)
+; LMULMAX2-NEXT:    vle32.v v28, (a1)
+; LMULMAX2-NEXT:    vmin.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse32.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smin_v8i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmin.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smin_v8i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmin.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i32>, <8 x i32>* %x
+  %b = load <8 x i32>, <8 x i32>* %y
+  %cc = icmp slt <8 x i32> %a, %b
+  %c = select <8 x i1> %cc, <8 x i32> %a, <8 x i32> %b
+  store <8 x i32> %c, <8 x i32>* %x
+  ret void
+}
+
+define void @smin_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
+; LMULMAX2-LABEL: smin_v4i64:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vle64.v v26, (a0)
+; LMULMAX2-NEXT:    vle64.v v28, (a1)
+; LMULMAX2-NEXT:    vmin.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse64.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smin_v4i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmin.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smin_v4i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmin.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmin.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i64>, <4 x i64>* %x
+  %b = load <4 x i64>, <4 x i64>* %y
+  %cc = icmp slt <4 x i64> %a, %b
+  %c = select <4 x i1> %cc, <4 x i64> %a, <4 x i64> %b
+  store <4 x i64> %c, <4 x i64>* %x
+  ret void
+}
+
+define void @smax_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
+; LMULMAX2-LABEL: smax_v32i8:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    addi a2, zero, 32
+; LMULMAX2-NEXT:    vsetvli a2, a2, e8,m2,ta,mu
+; LMULMAX2-NEXT:    vle8.v v26, (a0)
+; LMULMAX2-NEXT:    vle8.v v28, (a1)
+; LMULMAX2-NEXT:    vmax.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse8.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smax_v32i8:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmax.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smax_v32i8:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmax.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <32 x i8>, <32 x i8>* %x
+  %b = load <32 x i8>, <32 x i8>* %y
+  %cc = icmp sgt <32 x i8> %a, %b
+  %c = select <32 x i1> %cc, <32 x i8> %a, <32 x i8> %b
+  store <32 x i8> %c, <32 x i8>* %x
+  ret void
+}
+
+define void @smax_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
+; LMULMAX2-LABEL: smax_v16i16:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vle16.v v26, (a0)
+; LMULMAX2-NEXT:    vle16.v v28, (a1)
+; LMULMAX2-NEXT:    vmax.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse16.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smax_v16i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmax.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smax_v16i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmax.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <16 x i16>, <16 x i16>* %x
+  %b = load <16 x i16>, <16 x i16>* %y
+  %cc = icmp sgt <16 x i16> %a, %b
+  %c = select <16 x i1> %cc, <16 x i16> %a, <16 x i16> %b
+  store <16 x i16> %c, <16 x i16>* %x
+  ret void
+}
+
+define void @smax_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
+; LMULMAX2-LABEL: smax_v8i32:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vle32.v v26, (a0)
+; LMULMAX2-NEXT:    vle32.v v28, (a1)
+; LMULMAX2-NEXT:    vmax.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse32.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smax_v8i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmax.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smax_v8i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmax.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i32>, <8 x i32>* %x
+  %b = load <8 x i32>, <8 x i32>* %y
+  %cc = icmp sgt <8 x i32> %a, %b
+  %c = select <8 x i1> %cc, <8 x i32> %a, <8 x i32> %b
+  store <8 x i32> %c, <8 x i32>* %x
+  ret void
+}
+
+define void @smax_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
+; LMULMAX2-LABEL: smax_v4i64:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vle64.v v26, (a0)
+; LMULMAX2-NEXT:    vle64.v v28, (a1)
+; LMULMAX2-NEXT:    vmax.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse64.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: smax_v4i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmax.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: smax_v4i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmax.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmax.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i64>, <4 x i64>* %x
+  %b = load <4 x i64>, <4 x i64>* %y
+  %cc = icmp sgt <4 x i64> %a, %b
+  %c = select <4 x i1> %cc, <4 x i64> %a, <4 x i64> %b
+  store <4 x i64> %c, <4 x i64>* %x
+  ret void
+}
+
+define void @umin_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
+; LMULMAX2-LABEL: umin_v32i8:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    addi a2, zero, 32
+; LMULMAX2-NEXT:    vsetvli a2, a2, e8,m2,ta,mu
+; LMULMAX2-NEXT:    vle8.v v26, (a0)
+; LMULMAX2-NEXT:    vle8.v v28, (a1)
+; LMULMAX2-NEXT:    vminu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse8.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umin_v32i8:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vminu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umin_v32i8:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vminu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <32 x i8>, <32 x i8>* %x
+  %b = load <32 x i8>, <32 x i8>* %y
+  %cc = icmp ult <32 x i8> %a, %b
+  %c = select <32 x i1> %cc, <32 x i8> %a, <32 x i8> %b
+  store <32 x i8> %c, <32 x i8>* %x
+  ret void
+}
+
+define void @umin_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
+; LMULMAX2-LABEL: umin_v16i16:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vle16.v v26, (a0)
+; LMULMAX2-NEXT:    vle16.v v28, (a1)
+; LMULMAX2-NEXT:    vminu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse16.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umin_v16i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vminu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umin_v16i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vminu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <16 x i16>, <16 x i16>* %x
+  %b = load <16 x i16>, <16 x i16>* %y
+  %cc = icmp ult <16 x i16> %a, %b
+  %c = select <16 x i1> %cc, <16 x i16> %a, <16 x i16> %b
+  store <16 x i16> %c, <16 x i16>* %x
+  ret void
+}
+
+define void @umin_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
+; LMULMAX2-LABEL: umin_v8i32:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vle32.v v26, (a0)
+; LMULMAX2-NEXT:    vle32.v v28, (a1)
+; LMULMAX2-NEXT:    vminu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse32.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umin_v8i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vminu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umin_v8i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vminu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i32>, <8 x i32>* %x
+  %b = load <8 x i32>, <8 x i32>* %y
+  %cc = icmp ult <8 x i32> %a, %b
+  %c = select <8 x i1> %cc, <8 x i32> %a, <8 x i32> %b
+  store <8 x i32> %c, <8 x i32>* %x
+  ret void
+}
+
+define void @umin_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
+; LMULMAX2-LABEL: umin_v4i64:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vle64.v v26, (a0)
+; LMULMAX2-NEXT:    vle64.v v28, (a1)
+; LMULMAX2-NEXT:    vminu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse64.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umin_v4i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vminu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umin_v4i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vminu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vminu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i64>, <4 x i64>* %x
+  %b = load <4 x i64>, <4 x i64>* %y
+  %cc = icmp ult <4 x i64> %a, %b
+  %c = select <4 x i1> %cc, <4 x i64> %a, <4 x i64> %b
+  store <4 x i64> %c, <4 x i64>* %x
+  ret void
+}
+
+define void @umax_v32i8(<32 x i8>* %x, <32 x i8>* %y) {
+; LMULMAX2-LABEL: umax_v32i8:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    addi a2, zero, 32
+; LMULMAX2-NEXT:    vsetvli a2, a2, e8,m2,ta,mu
+; LMULMAX2-NEXT:    vle8.v v26, (a0)
+; LMULMAX2-NEXT:    vle8.v v28, (a1)
+; LMULMAX2-NEXT:    vmaxu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse8.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umax_v32i8:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle8.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umax_v32i8:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle8.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle8.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse8.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse8.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <32 x i8>, <32 x i8>* %x
+  %b = load <32 x i8>, <32 x i8>* %y
+  %cc = icmp ugt <32 x i8> %a, %b
+  %c = select <32 x i1> %cc, <32 x i8> %a, <32 x i8> %b
+  store <32 x i8> %c, <32 x i8>* %x
+  ret void
+}
+
+define void @umax_v16i16(<16 x i16>* %x, <16 x i16>* %y) {
+; LMULMAX2-LABEL: umax_v16i16:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 16, e16,m2,ta,mu
+; LMULMAX2-NEXT:    vle16.v v26, (a0)
+; LMULMAX2-NEXT:    vle16.v v28, (a1)
+; LMULMAX2-NEXT:    vmaxu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse16.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umax_v16i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle16.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umax_v16i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle16.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle16.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse16.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <16 x i16>, <16 x i16>* %x
+  %b = load <16 x i16>, <16 x i16>* %y
+  %cc = icmp ugt <16 x i16> %a, %b
+  %c = select <16 x i1> %cc, <16 x i16> %a, <16 x i16> %b
+  store <16 x i16> %c, <16 x i16>* %x
+  ret void
+}
+
+define void @umax_v8i32(<8 x i32>* %x, <8 x i32>* %y) {
+; LMULMAX2-LABEL: umax_v8i32:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 8, e32,m2,ta,mu
+; LMULMAX2-NEXT:    vle32.v v26, (a0)
+; LMULMAX2-NEXT:    vle32.v v28, (a1)
+; LMULMAX2-NEXT:    vmaxu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse32.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umax_v8i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle32.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umax_v8i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle32.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle32.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse32.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i32>, <8 x i32>* %x
+  %b = load <8 x i32>, <8 x i32>* %y
+  %cc = icmp ugt <8 x i32> %a, %b
+  %c = select <8 x i1> %cc, <8 x i32> %a, <8 x i32> %b
+  store <8 x i32> %c, <8 x i32>* %x
+  ret void
+}
+
+define void @umax_v4i64(<4 x i64>* %x, <4 x i64>* %y) {
+; LMULMAX2-LABEL: umax_v4i64:
+; LMULMAX2:       # %bb.0:
+; LMULMAX2-NEXT:    vsetivli a2, 4, e64,m2,ta,mu
+; LMULMAX2-NEXT:    vle64.v v26, (a0)
+; LMULMAX2-NEXT:    vle64.v v28, (a1)
+; LMULMAX2-NEXT:    vmaxu.vv v26, v26, v28
+; LMULMAX2-NEXT:    vse64.v v26, (a0)
+; LMULMAX2-NEXT:    ret
+;
+; LMULMAX1-RV32-LABEL: umax_v4i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    addi a3, a1, 16
+; LMULMAX1-RV32-NEXT:    vle64.v v27, (a3)
+; LMULMAX1-RV32-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v26, v26, v27
+; LMULMAX1-RV32-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: umax_v4i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a2, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    addi a2, a1, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    addi a2, a0, 16
+; LMULMAX1-RV64-NEXT:    vle64.v v27, (a2)
+; LMULMAX1-RV64-NEXT:    vle64.v v28, (a1)
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v26, v27, v26
+; LMULMAX1-RV64-NEXT:    vmaxu.vv v25, v25, v28
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    vse64.v v26, (a2)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i64>, <4 x i64>* %x
+  %b = load <4 x i64>, <4 x i64>* %y
+  %cc = icmp ugt <4 x i64> %a, %b
+  %c = select <4 x i1> %cc, <4 x i64> %a, <4 x i64> %b
+  store <4 x i64> %c, <4 x i64>* %x
+  ret void
+}
+
+define void @add_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: add_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vadd.vi v25, v25, -1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 -1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = add <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @add_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: add_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vadd.vi v25, v25, -1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 -1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = add <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @add_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: add_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vadd.vi v25, v25, -1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 -1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = add <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @add_iv_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: add_iv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vadd.vi v25, v25, 1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = add <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @add_iv_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: add_iv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vadd.vi v25, v25, 1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = add <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @add_iv_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: add_iv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vadd.vi v25, v25, 1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = add <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @add_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: add_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vadd.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = add <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @add_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: add_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vadd.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = add <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @add_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: add_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vadd.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = add <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @add_xv_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: add_xv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vadd.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = add <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @add_xv_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: add_xv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vadd.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = add <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @add_xv_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: add_xv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vadd.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = add <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @sub_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: sub_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    addi a1, zero, -1
+; CHECK-NEXT:    vsub.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 -1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = sub <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @sub_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: sub_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    addi a1, zero, -1
+; CHECK-NEXT:    vsub.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 -1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = sub <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @sub_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: sub_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    addi a1, zero, -1
+; CHECK-NEXT:    vsub.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 -1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = sub <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @sub_iv_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: sub_iv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vrsub.vi v25, v25, 1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = sub <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @sub_iv_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: sub_iv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vrsub.vi v25, v25, 1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = sub <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @sub_iv_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: sub_iv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vrsub.vi v25, v25, 1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = sub <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @sub_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: sub_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsub.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = sub <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @sub_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: sub_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsub.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = sub <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @sub_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: sub_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsub.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = sub <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @sub_xv_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: sub_xv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vrsub.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = sub <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @sub_xv_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: sub_xv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vrsub.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = sub <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @sub_xv_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: sub_xv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vrsub.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = sub <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @mul_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: mul_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vmul.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = mul <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @mul_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: mul_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vmul.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = mul <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @mul_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: mul_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vmul.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = mul <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @mul_xv_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: mul_xv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vmul.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = mul <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @mul_xv_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: mul_xv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vmul.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = mul <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @mul_xv_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: mul_xv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vmul.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = mul <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @and_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: and_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vand.vi v25, v25, -2
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 -2, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = and <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @and_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: and_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vand.vi v25, v25, -2
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 -2, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = and <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @and_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: and_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vand.vi v25, v25, -2
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 -2, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = and <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @and_iv_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: and_iv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vand.vi v25, v25, 1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = and <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @and_iv_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: and_iv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vand.vi v25, v25, 1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = and <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @and_iv_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: and_iv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vand.vi v25, v25, 1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = and <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @and_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: and_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vand.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = and <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @and_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: and_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vand.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = and <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @and_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: and_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vand.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = and <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @and_xv_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: and_xv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vand.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = and <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @and_xv_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: and_xv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vand.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = and <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @and_xv_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: and_xv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vand.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = and <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @or_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: or_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vor.vi v25, v25, -2
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 -2, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = or <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @or_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: or_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vor.vi v25, v25, -2
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 -2, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = or <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @or_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: or_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vor.vi v25, v25, -2
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 -2, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = or <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @or_iv_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: or_iv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vor.vi v25, v25, 1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = or <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @or_iv_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: or_iv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vor.vi v25, v25, 1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = or <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @or_iv_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: or_iv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vor.vi v25, v25, 1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = or <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @or_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: or_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vor.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = or <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @or_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: or_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vor.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = or <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @or_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: or_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vor.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = or <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @or_xv_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: or_xv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vor.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = or <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @or_xv_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: or_xv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vor.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = or <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @or_xv_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: or_xv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vor.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = or <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @xor_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: xor_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vxor.vi v25, v25, -1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 -1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = xor <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @xor_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: xor_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vxor.vi v25, v25, -1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 -1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = xor <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @xor_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: xor_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vxor.vi v25, v25, -1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 -1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = xor <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @xor_iv_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: xor_iv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vxor.vi v25, v25, 1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 1, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = xor <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @xor_iv_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: xor_iv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vxor.vi v25, v25, 1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 1, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = xor <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @xor_iv_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: xor_iv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vxor.vi v25, v25, 1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 1, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = xor <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @xor_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: xor_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vxor.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = xor <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @xor_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: xor_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vxor.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = xor <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @xor_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: xor_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vxor.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = xor <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @xor_xv_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: xor_xv_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vxor.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = xor <16 x i8> %c, %a
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @xor_xv_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: xor_xv_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vxor.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = xor <8 x i16> %c, %a
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @xor_xv_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: xor_xv_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vxor.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = xor <4 x i32> %c, %a
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @lshr_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: lshr_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsrl.vi v25, v25, 7
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 7, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = lshr <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @lshr_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: lshr_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsrl.vi v25, v25, 15
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 15, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = lshr <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @lshr_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: lshr_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsrl.vi v25, v25, 31
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 31, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = lshr <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @lshr_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: lshr_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsrl.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = lshr <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @lshr_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: lshr_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsrl.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = lshr <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @lshr_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: lshr_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsrl.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = lshr <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @ashr_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: ashr_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsra.vi v25, v25, 7
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 7, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = ashr <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @ashr_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: ashr_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsra.vi v25, v25, 15
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 15, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = ashr <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @ashr_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: ashr_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsra.vi v25, v25, 31
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 31, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = ashr <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @ashr_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: ashr_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsra.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = ashr <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @ashr_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: ashr_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsra.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = ashr <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @ashr_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: ashr_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsra.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = ashr <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @shl_vi_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: shl_vi_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsll.vi v25, v25, 7
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 7, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = shl <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @shl_vi_v8i16(<8 x i16>* %x) {
+; CHECK-LABEL: shl_vi_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsll.vi v25, v25, 15
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 15, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = shl <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @shl_vi_v4i32(<4 x i32>* %x) {
+; CHECK-LABEL: shl_vi_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsll.vi v25, v25, 31
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 31, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = shl <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @shl_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: shl_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vsll.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = shl <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @shl_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: shl_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vsll.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = shl <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @shl_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: shl_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vsll.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = shl <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @sdiv_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: sdiv_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vdiv.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = sdiv <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @sdiv_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: sdiv_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vdiv.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = sdiv <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @sdiv_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: sdiv_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vdiv.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = sdiv <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @srem_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: srem_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vrem.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = srem <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @srem_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: srem_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vrem.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = srem <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @srem_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: srem_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vrem.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = srem <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @udiv_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: udiv_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vdivu.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = udiv <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @udiv_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: udiv_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vdivu.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = udiv <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @udiv_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: udiv_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vdivu.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = udiv <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @urem_vx_v16i8(<16 x i8>* %x, i8 %y) {
+; CHECK-LABEL: urem_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    vremu.vx v25, v25, a1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = insertelement <16 x i8> undef, i8 %y, i32 0
+  %c = shufflevector <16 x i8> %b, <16 x i8> undef, <16 x i32> zeroinitializer
+  %d = urem <16 x i8> %a, %c
+  store <16 x i8> %d, <16 x i8>* %x
+  ret void
+}
+
+define void @urem_vx_v8i16(<8 x i16>* %x, i16 %y) {
+; CHECK-LABEL: urem_vx_v8i16:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 8, e16,m1,ta,mu
+; CHECK-NEXT:    vle16.v v25, (a0)
+; CHECK-NEXT:    vremu.vx v25, v25, a1
+; CHECK-NEXT:    vse16.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = insertelement <8 x i16> undef, i16 %y, i32 0
+  %c = shufflevector <8 x i16> %b, <8 x i16> undef, <8 x i32> zeroinitializer
+  %d = urem <8 x i16> %a, %c
+  store <8 x i16> %d, <8 x i16>* %x
+  ret void
+}
+
+define void @urem_vx_v4i32(<4 x i32>* %x, i32 %y) {
+; CHECK-LABEL: urem_vx_v4i32:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; CHECK-NEXT:    vle32.v v25, (a0)
+; CHECK-NEXT:    vremu.vx v25, v25, a1
+; CHECK-NEXT:    vse32.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = insertelement <4 x i32> undef, i32 %y, i32 0
+  %c = shufflevector <4 x i32> %b, <4 x i32> undef, <4 x i32> zeroinitializer
+  %d = urem <4 x i32> %a, %c
+  store <4 x i32> %d, <4 x i32>* %x
+  ret void
+}
+
+define void @mulhu_vx_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: mulhu_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    addi a1, zero, 57
+; CHECK-NEXT:    vmulhu.vx v25, v25, a1
+; CHECK-NEXT:    vsrl.vi v25, v25, 1
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = udiv <16 x i8> %a, <i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9, i8 9>
+  store <16 x i8> %b, <16 x i8>* %x
+  ret void
+}
+
+define void @mulhu_vx_v8i16(<8 x i16>* %x) {
+; LMULMAX1-RV32-LABEL: mulhu_vx_v8i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, 2
+; LMULMAX1-RV32-NEXT:    addi a1, a1, 1171
+; LMULMAX1-RV32-NEXT:    vmulhu.vx v26, v25, a1
+; LMULMAX1-RV32-NEXT:    vsub.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vsrl.vi v25, v25, 1
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vsrl.vi v25, v25, 2
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_vx_v8i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, 2
+; LMULMAX1-RV64-NEXT:    addiw a1, a1, 1171
+; LMULMAX1-RV64-NEXT:    vmulhu.vx v26, v25, a1
+; LMULMAX1-RV64-NEXT:    vsub.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vsrl.vi v25, v25, 1
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vsrl.vi v25, v25, 2
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = udiv <8 x i16> %a, <i16 7, i16 7, i16 7, i16 7, i16 7, i16 7, i16 7, i16 7>
+  store <8 x i16> %b, <8 x i16>* %x
+  ret void
+}
+
+define void @mulhu_vx_v4i32(<4 x i32>* %x) {
+; LMULMAX1-RV32-LABEL: mulhu_vx_v4i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, 838861
+; LMULMAX1-RV32-NEXT:    addi a1, a1, -819
+; LMULMAX1-RV32-NEXT:    vmulhu.vx v25, v25, a1
+; LMULMAX1-RV32-NEXT:    vsrl.vi v25, v25, 2
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_vx_v4i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, 838861
+; LMULMAX1-RV64-NEXT:    addiw a1, a1, -819
+; LMULMAX1-RV64-NEXT:    vmulhu.vx v25, v25, a1
+; LMULMAX1-RV64-NEXT:    vsrl.vi v25, v25, 2
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = udiv <4 x i32> %a, <i32 5, i32 5, i32 5, i32 5>
+  store <4 x i32> %b, <4 x i32>* %x
+  ret void
+}
+
+define void @mulhu_vx_v2i64(<2 x i64>* %x) {
+; LMULMAX1-RV32-LABEL: mulhu_vx_v2i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI252_0)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI252_0)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vmulhu.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI252_1)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI252_1)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsrl.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhu_vx_v2i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, 1026731
+; LMULMAX1-RV64-NEXT:    addiw a1, a1, -1365
+; LMULMAX1-RV64-NEXT:    slli a1, a1, 12
+; LMULMAX1-RV64-NEXT:    addi a1, a1, -1365
+; LMULMAX1-RV64-NEXT:    slli a1, a1, 12
+; LMULMAX1-RV64-NEXT:    addi a1, a1, -1365
+; LMULMAX1-RV64-NEXT:    slli a1, a1, 12
+; LMULMAX1-RV64-NEXT:    addi a1, a1, -1365
+; LMULMAX1-RV64-NEXT:    vmulhu.vx v25, v25, a1
+; LMULMAX1-RV64-NEXT:    vsrl.vi v25, v25, 1
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = udiv <2 x i64> %a, <i64 3, i64 3>
+  store <2 x i64> %b, <2 x i64>* %x
+  ret void
+}
+
+define void @mulhs_vx_v16i8(<16 x i8>* %x) {
+; CHECK-LABEL: mulhs_vx_v16i8:
+; CHECK:       # %bb.0:
+; CHECK-NEXT:    vsetivli a1, 16, e8,m1,ta,mu
+; CHECK-NEXT:    vle8.v v25, (a0)
+; CHECK-NEXT:    addi a1, zero, -123
+; CHECK-NEXT:    vmulhu.vx v25, v25, a1
+; CHECK-NEXT:    vsrl.vi v25, v25, 7
+; CHECK-NEXT:    vse8.v v25, (a0)
+; CHECK-NEXT:    ret
+  %a = load <16 x i8>, <16 x i8>* %x
+  %b = udiv <16 x i8> %a, <i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9, i8 -9>
+  store <16 x i8> %b, <16 x i8>* %x
+  ret void
+}
+
+define void @mulhs_vx_v8i16(<8 x i16>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_vx_v8i16:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, 5
+; LMULMAX1-RV32-NEXT:    addi a1, a1, -1755
+; LMULMAX1-RV32-NEXT:    vmulh.vx v25, v25, a1
+; LMULMAX1-RV32-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV32-NEXT:    vsrl.vi v26, v25, 15
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_vx_v8i16:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 8, e16,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, 5
+; LMULMAX1-RV64-NEXT:    addiw a1, a1, -1755
+; LMULMAX1-RV64-NEXT:    vmulh.vx v25, v25, a1
+; LMULMAX1-RV64-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV64-NEXT:    vsrl.vi v26, v25, 15
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vse16.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <8 x i16>, <8 x i16>* %x
+  %b = sdiv <8 x i16> %a, <i16 7, i16 7, i16 7, i16 7, i16 7, i16 7, i16 7, i16 7>
+  store <8 x i16> %b, <8 x i16>* %x
+  ret void
+}
+
+define void @mulhs_vx_v4i32(<4 x i32>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_vx_v4i32:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, 629146
+; LMULMAX1-RV32-NEXT:    addi a1, a1, -1639
+; LMULMAX1-RV32-NEXT:    vmulh.vx v25, v25, a1
+; LMULMAX1-RV32-NEXT:    vsrl.vi v26, v25, 31
+; LMULMAX1-RV32-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_vx_v4i32:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 4, e32,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, 629146
+; LMULMAX1-RV64-NEXT:    addiw a1, a1, -1639
+; LMULMAX1-RV64-NEXT:    vmulh.vx v25, v25, a1
+; LMULMAX1-RV64-NEXT:    vsra.vi v25, v25, 1
+; LMULMAX1-RV64-NEXT:    vsrl.vi v26, v25, 31
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vse32.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <4 x i32>, <4 x i32>* %x
+  %b = sdiv <4 x i32> %a, <i32 -5, i32 -5, i32 -5, i32 -5>
+  store <4 x i32> %b, <4 x i32>* %x
+  ret void
+}
+
+define void @mulhs_vx_v2i64(<2 x i64>* %x) {
+; LMULMAX1-RV32-LABEL: mulhs_vx_v2i64:
+; LMULMAX1-RV32:       # %bb.0:
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI256_0)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI256_0)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vmulh.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    lui a1, %hi(.LCPI256_1)
+; LMULMAX1-RV32-NEXT:    addi a1, a1, %lo(.LCPI256_1)
+; LMULMAX1-RV32-NEXT:    vsetivli a2, 4, e32,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vle32.v v26, (a1)
+; LMULMAX1-RV32-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV32-NEXT:    vsrl.vv v26, v25, v26
+; LMULMAX1-RV32-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV32-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV32-NEXT:    ret
+;
+; LMULMAX1-RV64-LABEL: mulhs_vx_v2i64:
+; LMULMAX1-RV64:       # %bb.0:
+; LMULMAX1-RV64-NEXT:    vsetivli a1, 2, e64,m1,ta,mu
+; LMULMAX1-RV64-NEXT:    vle64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    lui a1, 21845
+; LMULMAX1-RV64-NEXT:    addiw a1, a1, 1365
+; LMULMAX1-RV64-NEXT:    slli a1, a1, 12
+; LMULMAX1-RV64-NEXT:    addi a1, a1, 1365
+; LMULMAX1-RV64-NEXT:    slli a1, a1, 12
+; LMULMAX1-RV64-NEXT:    addi a1, a1, 1365
+; LMULMAX1-RV64-NEXT:    slli a1, a1, 12
+; LMULMAX1-RV64-NEXT:    addi a1, a1, 1366
+; LMULMAX1-RV64-NEXT:    vmulh.vx v25, v25, a1
+; LMULMAX1-RV64-NEXT:    addi a1, zero, 63
+; LMULMAX1-RV64-NEXT:    vsrl.vx v26, v25, a1
+; LMULMAX1-RV64-NEXT:    vadd.vv v25, v25, v26
+; LMULMAX1-RV64-NEXT:    vse64.v v25, (a0)
+; LMULMAX1-RV64-NEXT:    ret
+  %a = load <2 x i64>, <2 x i64>* %x
+  %b = sdiv <2 x i64> %a, <i64 3, i64 3>
+  store <2 x i64> %b, <2 x i64>* %x
   ret void
 }
