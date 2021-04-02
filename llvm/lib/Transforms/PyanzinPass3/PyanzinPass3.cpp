@@ -15,8 +15,8 @@ void handleLoop(Loop *L, LoopAnalysisManager& LAM, LoopStandardAnalysisResults& 
     if(L->isInnermost())
     {
         auto& PLA = LAM.getResult<PyanzinLoopAnalysis>(*L, AR);
-        errs() << "Updates count:" << PLA.InvUpdatesCount << "\n";
-        if (PLA.InvUpdatesCount == 1)
+        errs() << "Updates count:" << PLA.updates_count << "\n";
+        if (PLA.updates_count == 1)
         {
             TotalLoopsVectorizableIV++;
         }
