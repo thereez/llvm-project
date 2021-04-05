@@ -1,8 +1,5 @@
 #pragma once
 
-#define DEBUG_TYPE "VokhmyaninaCounter"
-#include "llvm/ADT/Statistic.h"
-
 #include "llvm/IR/PassManager.h"
 #include "llvm/IR/Function.h"
 #include "llvm/Analysis/LoopInfo.h"

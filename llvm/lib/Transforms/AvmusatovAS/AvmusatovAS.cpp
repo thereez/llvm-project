@@ -32,7 +32,7 @@ PreservedAnalyses AvmusatovAS::run(Function& F, FunctionAnalysisManager& AM) {
 
             if (auto leftOf = dyn_cast<ConstantFP>(BO->getOperand(LEFT_OP))) {
                 auto leftOpValue = leftOf->getValue().convertToFloat();
-                if (leftOpValue == 0.f && opCode == Instruction::FAdd || leftOpValue == 1.f && opCode == Instruction::FMul) {
+                if (((leftOpValue == 0.f) && (opCode == Instruction::FAdd)) || ((leftOpValue == 1.f) && (opCode == Instruction::FMul))) {
                     leftWarkSet.push_back(BO);
                     pa = PreservedAnalyses::none();
                 }
@@ -40,7 +40,7 @@ PreservedAnalyses AvmusatovAS::run(Function& F, FunctionAnalysisManager& AM) {
 
             if (auto rightOp = dyn_cast<ConstantFP>(BO->getOperand(RIGHT_OP))) {
                 auto rightOpValue = rightOp->getValue().convertToFloat();
-                if (rightOpValue == 0.f && opCode == Instruction::FAdd || rightOpValue == 1.f && opCode == Instruction::FMul) {
+                if (((rightOpValue == 0.f) && (opCode == Instruction::FAdd)) || ((rightOpValue == 1.f) && (opCode == Instruction::FMul))) {
                     rightWarkSet.push_back(BO);
                     pa = PreservedAnalyses::none();
                 }

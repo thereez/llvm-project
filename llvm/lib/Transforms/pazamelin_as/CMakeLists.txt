@@ -19,6 +19,4 @@ add_llvm_library(LLVMpazamelin_as
 
   DEPENDS
   intrinsics_gen
-  PLUGIN_TOOL
-  opt
   )

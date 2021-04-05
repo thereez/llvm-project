@@ -1,4 +1,8 @@
 #include "llvm/Transforms/Strakhovcounter/Strakhovcounter.h"
+
+#define DEBUG_TYPE "Strakhovcounter"
+#include "llvm/ADT/Statistic.h"
+
 using namespace std;
 using namespace llvm;
 

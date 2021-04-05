@@ -1,5 +1,8 @@
 #include "llvm/Transforms/Selivanovskaya_lab1/Selivanovskaya_lab1.h"
 
+#define DEBUG_TYPE "Selivanovskaya_lab1"
+#include "llvm/ADT/Statistic.h"
+
 using namespace llvm;
 using namespace std;
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#define DEBUG_TYPE "VokhmyaninaLab2"
-#include "llvm/ADT/Statistic.h"
-
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/IR/InstIterator.h"
 #include "llvm/IR/IntrinsicInst.h"
