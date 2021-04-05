@@ -14,7 +14,7 @@ using namespace llvm;
 
 PreservedAnalyses aanoskovASPass::run(Function &F,
                                       FunctionAnalysisManager &AM) {
-   
+
     auto pa = PreservedAnalyses::all();
 
     SmallVector<BinaryOperator*, 16> wark_set_right;
@@ -27,13 +27,13 @@ PreservedAnalyses aanoskovASPass::run(Function &F,
         {
             if (auto RHSC = dyn_cast<ConstantFP>(BO->getOperand(1)))
             {
-                if (RHSC->getValue().convertToFloat() == 0.f && (BO->getOpcode() == Instruction::FAdd) || (BO->getOpcode() == Instruction::Add))
+                if (((RHSC->getValue().convertToFloat() == 0.f) && (BO->getOpcode() == Instruction::FAdd)) || (BO->getOpcode() == Instruction::Add))
                 {
                     wark_set_right.push_back(BO);
                     pa = PreservedAnalyses::none();
                 }
 
-                else if (RHSC->getValue().convertToFloat() == 1.f && (BO->getOpcode() == Instruction::FMul) || (BO->getOpcode() == Instruction::Mul))
+                else if (((RHSC->getValue().convertToFloat() == 1.f) && (BO->getOpcode() == Instruction::FMul)) || (BO->getOpcode() == Instruction::Mul))
                 {
                     wark_set_right.push_back(BO);
                     pa = PreservedAnalyses::none();
@@ -41,13 +41,13 @@ PreservedAnalyses aanoskovASPass::run(Function &F,
             }
             else if(auto LHSC = dyn_cast<ConstantFP>(BO->getOperand(0)))
             {
-                if (LHSC->getValue().convertToFloat() == 0.f && (BO->getOpcode() == Instruction::FAdd) || (BO->getOpcode() == Instruction::Add))
+                if (((LHSC->getValue().convertToFloat() == 0.f) && (BO->getOpcode() == Instruction::FAdd)) || (BO->getOpcode() == Instruction::Add))
                 {
                     wark_set_left.push_back(BO);
                     pa = PreservedAnalyses::none();
                 }
 
-                else if (LHSC->getValue().convertToFloat() == 1.f && (BO->getOpcode() == Instruction::FMul) || (BO->getOpcode() == Instruction::Mul))
+                else if (((LHSC->getValue().convertToFloat() == 1.f) && (BO->getOpcode() == Instruction::FMul)) || (BO->getOpcode() == Instruction::Mul))
                 {
                     wark_set_left.push_back(BO);
                     pa = PreservedAnalyses::none();
