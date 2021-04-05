@@ -15,7 +15,7 @@ STATISTIC(TotalBasicBlocks, "Number of basic blocks");
 STATISTIC(TotalAdd, "Number of 'Add'");
 STATISTIC(TotalMul, "Number of 'Mul'");
 
-void countLoopsRecursive(Loop* loop) {
+static void countLoopsRecursive(Loop* loop) {
     TotalLoops++;
     for (Loop::iterator newLoop = loop->begin(); newLoop != loop->end(); ++newLoop) {
         countLoopsRecursive(*newLoop);

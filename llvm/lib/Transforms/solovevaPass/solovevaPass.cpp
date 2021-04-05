@@ -1,7 +1,7 @@
-//   write a pass Counting: 
-// - only function definitions 
+//   write a pass Counting:
+// - only function definitions
 // - loops
-// - Basic blocks 
+// - Basic blocks
 // - Arithmetic instructions of type add and mull.
 
 #include "llvm/Transforms/solovevaPass/solovevaPass.h"
@@ -15,7 +15,7 @@ STATISTIC(TotalBasicBlocks, "Number of basic blocks");
 STATISTIC(TotalAdd, "Number of 'Add'");
 STATISTIC(TotalMul, "Number of 'Mul'");
 
-void countLoopsRecursive(Loop* loop) {
+static void countLoopsRecursive(Loop* loop) {
     TotalLoops++;
     for (Loop::iterator newLoop = loop->begin(); newLoop != loop->end(); ++newLoop) {
         countLoopsRecursive(*newLoop);
@@ -28,7 +28,7 @@ void countLoops(llvm::LoopAnalysis::Result& loops) {
     }
 }
 
-PreservedAnalyses IDoroshenkoPass::run(Function &function, FunctionAnalysisManager &AM) {
+PreservedAnalyses solovevaPass::run(Function &function, FunctionAnalysisManager &AM) {
     if(!function.isDeclaration()) {
         TotalFuncsDef++;
         llvm::LoopAnalysis::Result& loopsResult = AM.getResult<LoopAnalysis>(function);
