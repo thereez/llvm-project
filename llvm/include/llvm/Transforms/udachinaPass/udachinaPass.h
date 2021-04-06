@@ -1,6 +1,4 @@
-#ifndef LLVM_TRANSFORMS_UDACHINAPASS_H
-#define LLVM_TRANSFORMS_UDACHINAPASS_H
-#define DEBUG_TYPE "udachinaPass"
+
 
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/ADT/Statistic.h"
