@@ -1,3 +1,6 @@
+#ifndef LLVM_TRANSFORMS_UDACHINAPASS_H
+#define LLVM_TRANSFORMS_UDACHINAPASS_H
+#define DEBUG_TYPE "udachinaPass"
 #include "llvm/Transforms/udachinaPass/udachinaPass.h"
 
 using namespace llvm;
