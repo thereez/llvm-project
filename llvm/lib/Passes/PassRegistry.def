@@ -172,6 +172,7 @@ FUNCTION_ANALYSIS("targetir",
                   TM ? TM->getTargetIRAnalysis() : TargetIRAnalysis())
 FUNCTION_ANALYSIS("verify", VerifierAnalysis())
 FUNCTION_ANALYSIS("pass-instrumentation", PassInstrumentationAnalysis(PIC))
+FUNCTION_ANALYSIS("idoroshenko-analysis", IDoroshenkoAnalysis())
 FUNCTION_ANALYSIS("divergence", DivergenceAnalysis())
 
 #ifndef FUNCTION_ALIAS_ANALYSIS
@@ -249,6 +250,7 @@ FUNCTION_PASS("VokhmyaninaCounter", VokhmyaninaCounter())
 FUNCTION_PASS("VokhmyaninaLab2", VokhmyaninaLab2())
 FUNCTION_PASS("idoroshenkopass", IDoroshenkoPass())
 FUNCTION_PASS("idoroshenkopass2", IDoroshenkoPass2())
+FUNCTION_PASS("idoroshenkopass3", IDoroshenkoPass3())
 FUNCTION_PASS("infer-address-spaces", InferAddressSpacesPass())
 FUNCTION_PASS("instcombine", InstCombinePass())
 FUNCTION_PASS("instcount", InstCountPass())
@@ -433,6 +435,7 @@ LOOP_ANALYSIS("access-info", LoopAccessAnalysis())
 LOOP_ANALYSIS("ddg", DDGAnalysis())
 LOOP_ANALYSIS("iv-users", IVUsersAnalysis())
 LOOP_ANALYSIS("pass-instrumentation", PassInstrumentationAnalysis(PIC))
+LOOP_ANALYSIS("idoroshenko-loop-analysis", IDoroshenkoLoopAnalysis())
 #undef LOOP_ANALYSIS
 
 #ifndef LOOP_PASS
