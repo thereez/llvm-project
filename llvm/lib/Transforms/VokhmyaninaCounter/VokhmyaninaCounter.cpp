@@ -1,5 +1,6 @@
 #include "llvm/Transforms/VokhmyaninaCounter/VokhmyaninaCounter.h"
-
+#define DEBUG_TYPE "VokhmyaninaCounter"
+#include "llvm/ADT/Statistic.h"
 using namespace llvm;
 
 STATISTIC(TotalFuncsDef, "Number of function definitions");
@@ -28,5 +29,5 @@ PreservedAnalyses VokhmyaninaCounter::run(Function &F, FunctionAnalysisManager &
     }
   }
   return PreservedAnalyses::all();
-  
+
 }

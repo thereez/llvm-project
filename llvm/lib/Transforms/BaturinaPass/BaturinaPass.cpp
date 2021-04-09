@@ -1,5 +1,7 @@
 #include "llvm/Transforms/BaturinaPass/BaturinaPass.h"
+#define DEBUG_TYPE "Baturina pass"
 
+#include "llvm/ADT/Statistic.h"
 using namespace llvm;
 
 STATISTIC(definitions_cnt, "Number of function definitions");
@@ -31,4 +33,4 @@ PreservedAnalyses BaturinaPass::run(Function &F, FunctionAnalysisManager &FAM) {
         }
     }
     return PreservedAnalyses::all();
-} 
+}

@@ -63,8 +63,8 @@ MODULE_PASS("khwasan", HWAddressSanitizerPass(true, true))
 MODULE_PASS("inferattrs", InferFunctionAttrsPass())
 MODULE_PASS("inliner-wrapper", ModuleInlinerWrapperPass())
 MODULE_PASS("inliner-wrapper-no-mandatory-first", ModuleInlinerWrapperPass(
-  getInlineParams(), 
-  DebugLogging, 
+  getInlineParams(),
+  DebugLogging,
   false))
 MODULE_PASS("insert-gcov-profiling", GCOVProfilerPass())
 MODULE_PASS("instrorderfile", InstrOrderFilePass())
@@ -173,6 +173,7 @@ FUNCTION_ANALYSIS("targetir",
                   TM ? TM->getTargetIRAnalysis() : TargetIRAnalysis())
 FUNCTION_ANALYSIS("verify", VerifierAnalysis())
 FUNCTION_ANALYSIS("pass-instrumentation", PassInstrumentationAnalysis(PIC))
+FUNCTION_ANALYSIS("idoroshenko-analysis", IDoroshenkoAnalysis())
 FUNCTION_ANALYSIS("divergence", DivergenceAnalysis())
 
 #ifndef FUNCTION_ALIAS_ANALYSIS
@@ -235,6 +236,7 @@ FUNCTION_PASS("voronovalab2", VoronovaLab2())
 FUNCTION_PASS("Selivanovskaya_lab1", Selivanovskaya_lab1())
 FUNCTION_PASS("ilyinpass", IlyinPass())
 FUNCTION_PASS("ilyinpass2", IlyinPass2())
+FUNCTION_PASS("udachinaPass", udachinaPass())
 FUNCTION_PASS("pazamelin", PAZamelinPass())
 FUNCTION_PASS("pazamelin", PAZamelinPassAS())
 FUNCTION_PASS("akomyagincount", AKomyaginCount())
@@ -250,6 +252,7 @@ FUNCTION_PASS("VokhmyaninaCounter", VokhmyaninaCounter())
 FUNCTION_PASS("VokhmyaninaLab2", VokhmyaninaLab2())
 FUNCTION_PASS("idoroshenkopass", IDoroshenkoPass())
 FUNCTION_PASS("idoroshenkopass2", IDoroshenkoPass2())
+FUNCTION_PASS("idoroshenkopass3", IDoroshenkoPass3())
 FUNCTION_PASS("infer-address-spaces", InferAddressSpacesPass())
 FUNCTION_PASS("instcombine", InstCombinePass())
 FUNCTION_PASS("instcount", InstCountPass())
@@ -286,6 +289,7 @@ FUNCTION_PASS("mergereturn", UnifyFunctionExitNodesPass())
 FUNCTION_PASS("nary-reassociate", NaryReassociatePass())
 FUNCTION_PASS("newgvn", NewGVNPass())
 FUNCTION_PASS("dvorobyovcountpass", DVorobyovCountPass())
+FUNCTION_PASS("dvorobyovlab2pass", DVorobyovLab2Pass())
 FUNCTION_PASS("kovakimycountpass", KovakimyCountPass())
 FUNCTION_PASS("kovakimypass", KovakimyPass())
 FUNCTION_PASS("jump-threading", JumpThreadingPass())
@@ -316,7 +320,7 @@ FUNCTION_PASS("print<demanded-bits>", DemandedBitsPrinterPass(dbgs()))
 FUNCTION_PASS("print<domfrontier>", DominanceFrontierPrinterPass(dbgs()))
 FUNCTION_PASS("print<func-properties>", FunctionPropertiesPrinterPass(dbgs()))
 FUNCTION_PASS("print<inline-cost>", InlineCostAnnotationPrinterPass(dbgs()))
-FUNCTION_PASS("print<inliner-size-estimator>", 
+FUNCTION_PASS("print<inliner-size-estimator>",
   InlineSizeEstimatorAnalysisPrinterPass(dbgs()))
 FUNCTION_PASS("print<loops>", LoopPrinterPass(dbgs()))
 FUNCTION_PASS("print<memoryssa>", MemorySSAPrinterPass(dbgs()))
@@ -336,6 +340,8 @@ FUNCTION_PASS("scalarize-masked-mem-intrin", ScalarizeMaskedMemIntrinPass())
 FUNCTION_PASS("scalarizer", ScalarizerPass())
 FUNCTION_PASS("separate-const-offset-from-gep", SeparateConstOffsetFromGEPPass())
 FUNCTION_PASS("sccp", SCCPPass())
+FUNCTION_PASS("solovevaPass", solovevaPass())
+FUNCTION_PASS("solovevaPass2", solovevaPass2())
 FUNCTION_PASS("simplifycfg", SimplifyCFGPass())
 FUNCTION_PASS("sink", SinkingPass())
 FUNCTION_PASS("slp-vectorizer", SLPVectorizerPass())
@@ -364,13 +370,13 @@ FUNCTION_PASS("msan", MemorySanitizerPass({}))
 FUNCTION_PASS("kmsan", MemorySanitizerPass({0, false, /*Kernel=*/true}))
 FUNCTION_PASS("tsan", ThreadSanitizerPass())
 FUNCTION_PASS("memprof", MemProfilerPass())
-FUNCTION_PASS("Korkunov_ASpass", Korkunov_ASpass())  
+FUNCTION_PASS("Korkunov_ASpass", Korkunov_ASpass())
 FUNCTION_PASS("Sazanov_Lab1_Pass", Sazanov_Lab1_Pass())
 FUNCTION_PASS("Strakhovcounter", Strakhovcounter())
 FUNCTION_PASS("aanoskovCounter", aanoskovCounter())
-FUNCTION_PASS("sdanilov", SdanilovPass())   
+FUNCTION_PASS("sdanilov", SdanilovPass())
 FUNCTION_PASS("MelnikovLab1Pass", MelnikovLab1Pass()) // Lab1 pass
-FUNCTION_PASS("MelnikovLab2Pass", MelnikovLab2Pass()) 
+FUNCTION_PASS("MelnikovLab2Pass", MelnikovLab2Pass())
 FUNCTION_PASS("MoiseevPass", MoiseevPass())
 FUNCTION_PASS("VolokhPass", VolokhPass())
 FUNCTION_PASS("BaturinaPass", BaturinaPass())
@@ -380,6 +386,7 @@ FUNCTION_PASS("VolokhSecondPass", VolokhSecondPass())
 FUNCTION_PASS("KatyaMalyshevaLab1Pass", KatyaMalyshevaLab1Pass())
 FUNCTION_PASS("KatyaMalyshevaLab2Pass", KatyaMalyshevaLab2Pass())
 
+FUNCTION_PASS("aanoskovASPass", aanoskovASPass())
 #undef FUNCTION_PASS
 
 #ifndef FUNCTION_PASS_WITH_PARAMS
@@ -430,6 +437,7 @@ LOOP_ANALYSIS("access-info", LoopAccessAnalysis())
 LOOP_ANALYSIS("ddg", DDGAnalysis())
 LOOP_ANALYSIS("iv-users", IVUsersAnalysis())
 LOOP_ANALYSIS("pass-instrumentation", PassInstrumentationAnalysis(PIC))
+LOOP_ANALYSIS("idoroshenko-loop-analysis", IDoroshenkoLoopAnalysis())
 #undef LOOP_ANALYSIS
 
 #ifndef LOOP_PASS

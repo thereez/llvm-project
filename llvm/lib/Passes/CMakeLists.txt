@@ -13,12 +13,14 @@ add_llvm_component_library(LLVMPasses
 
   LINK_COMPONENTS
   aanoskovCounter
+  aanoskovASPass
   AggressiveInstCombine
   Analysis
   Core
   Coroutines
   IPO
   InstCombine
+udachinaPass
   AKomyaginCount
   AKomyaginASPass
   AvmusatovCount
@@ -30,6 +32,7 @@ add_llvm_component_library(LLVMPasses
   PyanzinPass3
   Scalar
   Support
+  solovevaPass
   Target
   TransformUtils
   Vectorize

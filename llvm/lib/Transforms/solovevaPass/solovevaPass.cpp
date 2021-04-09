@@ -4,9 +4,9 @@
 // - Basic blocks
 // - Arithmetic instructions of type add and mull.
 
-#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
+#include "llvm/Transforms/solovevaPass/solovevaPass.h"
 
-#define DEBUG_TYPE "idoroshenkopass"
+#define DEBUG_TYPE "solovevapass"
 using namespace llvm;
 
 STATISTIC(TotalFuncsDef, "Number of function definitions");
@@ -22,13 +22,13 @@ static void countLoopsRecursive(Loop* loop) {
     }
 }
 
-static void countLoops(llvm::LoopAnalysis::Result& loops) {
+void countLoops(llvm::LoopAnalysis::Result& loops) {
     for (LoopInfo::iterator loop = loops.begin(); loop != loops.end(); ++loop) {
         countLoopsRecursive(*loop);
     }
 }
 
-PreservedAnalyses IDoroshenkoPass::run(Function &function, FunctionAnalysisManager &AM) {
+PreservedAnalyses solovevaPass::run(Function &function, FunctionAnalysisManager &AM) {
     if(!function.isDeclaration()) {
         TotalFuncsDef++;
         llvm::LoopAnalysis::Result& loopsResult = AM.getResult<LoopAnalysis>(function);

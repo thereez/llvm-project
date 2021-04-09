@@ -1,6 +1,13 @@
 #include "llvm/Transforms/pazamelin/pass.h"
-
+#define DEBUG_TYPE "pazamelin"
+#include "llvm/ADT/Statistic.h"
 using namespace llvm;
+STATISTIC(TotalFunctions, "Number of Functions");
+STATISTIC(TotalBasicBlocks, "Number of BasicBlocks");
+STATISTIC(TotalLoops, "Number of Loops");
+STATISTIC(TotalAdd, "Number of Add");
+STATISTIC(TotalMul, "Number of Mul");
+
 
 PreservedAnalyses PAZamelinPass::run(Function& F, FunctionAnalysisManager& AM)
 {
@@ -10,7 +17,7 @@ PreservedAnalyses PAZamelinPass::run(Function& F, FunctionAnalysisManager& AM)
     {
         TotalFunctions++;
         TotalBasicBlocks += F.size();
-    
+
         LoopInfo &LI = AM.getResult<LoopAnalysis>(F);
         for (const auto* L : LI)
         {
@@ -23,15 +30,15 @@ PreservedAnalyses PAZamelinPass::run(Function& F, FunctionAnalysisManager& AM)
             {
                 if (I.isBinaryOp())
                 {
-                    const auto opcode = I.getOpcode();  
+                    const auto opcode = I.getOpcode();
                     switch (opcode)
                     {
                         case Instruction::Add:
                         case Instruction::FAdd:
                         {
-                            TotalAdd++;    
+                            TotalAdd++;
                             break;
-                        }                    
+                        }
                         case Instruction::Mul:
                         case Instruction::FMul:
                         {
@@ -44,7 +51,7 @@ PreservedAnalyses PAZamelinPass::run(Function& F, FunctionAnalysisManager& AM)
                 }
             }
         }
-    }    
+    }
 
     return PreservedAnalyses::all();
 }

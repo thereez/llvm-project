@@ -1,7 +1,5 @@
-#ifndef FIRSTLAB
-#define FIRSTLAB
-
-#define DEBUG_TYPE "Baturina pass 2"
+#ifndef SECONDLAB
+#define SECONDLAB
 
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/PassManager.h"

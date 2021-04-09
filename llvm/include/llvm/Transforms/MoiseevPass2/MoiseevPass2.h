@@ -1,7 +1,5 @@
 #pragma once
 
-#define DEBUG_TYPE "MoiseevPass2"
-
 #include "llvm/ADT/Statistic.h"
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/IR/PassManager.h"
@@ -19,4 +17,4 @@ namespace llvm {
             PreservedAnalyses run(Function &F, FunctionAnalysisManager &AM);
             static bool isRequired() {return true;}
     };
-} 
+}

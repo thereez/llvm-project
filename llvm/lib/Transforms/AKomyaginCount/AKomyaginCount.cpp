@@ -1,5 +1,11 @@
 #include "llvm/Transforms/AKomyaginCount/AKomyaginCount.h"
-
+#define DEBUG_TYPE "AKomyaginCount"
+#include "llvm/ADT/Statistic.h"
+STATISTIC(FunctionCount, "Number of function definitions");
+STATISTIC(LoopsCount, "Number of loops");
+STATISTIC(BlocksCount, "Number of basic blocks");
+STATISTIC(MulCount, "Number of mul");
+STATISTIC(AddCount, "Number of add");
 using namespace llvm;
 
 static void countInnerLoops(Loop* loop) {

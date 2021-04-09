@@ -2,14 +2,14 @@
 
 using namespace llvm;
 
-PreservedAnalyses VokhmyaninaCounter::run(Function &F, FunctionAnalysisManager &AM) {
+PreservedAnalyses VokhmyaninaLab2::run(Function &F, FunctionAnalysisManager &AM) {
 
     auto pa = PreservedAnalyses::all();
- 
+
     SmallVector<BinaryOperator*, 16> wark_set_R;
     SmallVector<BinaryOperator*, 16> wark_set_L;
     SmallVector<CallInst*, 16> wark_set_P;
-    
+
     for (auto& I : instructions(F)) {
         if (auto BO = dyn_cast<BinaryOperator>(&I)){
             if(auto RHSC = dyn_cast<ConstantFP>(BO->getOperand(1))) {
@@ -21,7 +21,7 @@ PreservedAnalyses VokhmyaninaCounter::run(Function &F, FunctionAnalysisManager &
                     wark_set_R.push_back(BO);
                     pa = PreservedAnalyses::none();
                 }
-                 
+
             }
             else if(auto LHSC = dyn_cast<ConstantFP>(BO->getOperand(0))) {
                 if(LHSC->getValue().convertToFloat() == 0.f && BO->getOpcode() == Instruction::FAdd) {
@@ -31,7 +31,7 @@ PreservedAnalyses VokhmyaninaCounter::run(Function &F, FunctionAnalysisManager &
                 if(LHSC->getValue().convertToFloat() == 1.f && BO->getOpcode() == Instruction::FMul) {
                     wark_set_L.push_back(BO);
                     pa = PreservedAnalyses::none();
-                } 
+                }
             }
         }
         if (auto CI = dyn_cast<CallInst>(&I)){
@@ -63,6 +63,6 @@ PreservedAnalyses VokhmyaninaCounter::run(Function &F, FunctionAnalysisManager &
         mul->insertBefore(CI);
         CI->eraseFromParent();
     }
- 
+
     return pa;
 }

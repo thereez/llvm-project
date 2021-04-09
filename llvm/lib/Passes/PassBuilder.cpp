@@ -70,6 +70,8 @@
 #include "llvm/Analysis/TargetLibraryInfo.h"
 #include "llvm/Analysis/TargetTransformInfo.h"
 #include "llvm/Analysis/TypeBasedAliasAnalysis.h"
+#include "llvm/Analysis/IDoroshenkoAnalysis.h"
+#include "llvm/Analysis/IDoroshenkoLoopAnalysis.h"
 #include "llvm/IR/Dominators.h"
 #include "llvm/IR/IRPrintingPasses.h"
 #include "llvm/IR/PassManager.h"
@@ -132,6 +134,7 @@
 #include "llvm/Transforms/Instrumentation/GCOVProfiler.h"
 #include "llvm/Transforms/Instrumentation/HWAddressSanitizer.h"
 #include "llvm/Transforms/Instrumentation/InstrOrderFile.h"
+#include "llvm/Transforms/udachinaPass/udachinaPass.h"
 #include "llvm/Transforms/Instrumentation/InstrProfiling.h"
 #include "llvm/Transforms/Instrumentation/MemProfiler.h"
 #include "llvm/Transforms/Instrumentation/MemorySanitizer.h"
@@ -140,6 +143,7 @@
 #include "llvm/Transforms/Instrumentation/SanitizerCoverage.h"
 #include "llvm/Transforms/Instrumentation/ThreadSanitizer.h"
 #include "llvm/Transforms/DVorobyovCount/DVorobyovCount.h"
+#include "llvm/Transforms/DVorobyovCount/DVorobyovLab2.h"
 #include "llvm/Transforms/KovakimyCount/KovakimyCount.h"
 #include "llvm/Transforms/KovakimyCount/KovakimyAS.h"
 #include "llvm/Transforms/ObjCARC.h"
@@ -240,9 +244,12 @@
 #include "llvm/Transforms/PankratovaASPass/PankratovaASPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass.h"
 #include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass2.h"
+#include "llvm/Transforms/idoroshenkoPass/idoroshenkoPass3.h"
 #include "llvm/Transforms/Utils/InjectTLIMappings.h"
 #include "llvm/Transforms/Utils/InstructionNamer.h"
 #include "llvm/Transforms/Utils/LCSSA.h"
+#include "llvm/Transforms/solovevaPass/solovevaPass.h"
+#include "llvm/Transforms/solovevaPass/solovevaPass2.h"
 #include "llvm/Transforms/Utils/LibCallsShrinkWrap.h"
 #include "llvm/Transforms/Utils/LoopSimplify.h"
 #include "llvm/Transforms/Utils/LoopVersioning.h"
@@ -290,6 +297,8 @@
 
 #include "llvm/Transforms/KatyaMalyshevaLab1Pass/KatyaMalyshevaLab1Pass.h"
 #include "llvm/Transforms/KatyaMalyshevaLab2Pass/KatyaMalyshevaLab2Pass.h"
+#include "llvm/Transforms/aanoskovASPass/aanoskovASPass.h"
+
 using namespace llvm;
 
 extern cl::opt<unsigned> MaxDevirtIterations;
